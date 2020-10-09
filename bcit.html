@@ -1,0 +1,2257 @@
+	<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+	
+		<meta charset="utf-8">
+	<meta name="author" content="BCIT">
+	<link rel="pingback" href="https://www.bcit.ca/xmlrpc.php">
+
+		<meta name="HandheldFriendly" content="True">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<meta name="apple-mobile-web-app-title" content="">
+
+		<meta name="application-name" content="BCIT">
+
+		<meta name="section" content="Home">
+
+    
+
+	
+		<script type="text/javascript">
+		    function is_browser() {
+		        return (
+		            navigator.userAgent.indexOf("Opera") !== -1 ||
+		            navigator.userAgent.indexOf("OPR") !== -1 ||
+		            navigator.userAgent.indexOf("MSIE") !== -1 || // IE10 and below
+		            navigator.userAgent.indexOf("Trident") !== -1 || // IE11
+		            navigator.userAgent.indexOf("Edge") !== -1 ||
+		            navigator.userAgent.indexOf("Edg") !== -1 ||
+		            navigator.userAgent.indexOf("Chrome") !== -1 ||
+		            navigator.userAgent.indexOf("Firefox") !== -1 ||
+		            navigator.userAgent.indexOf("FxiOS") !== -1 || // Firefox iOS, includes Focus
+		            navigator.userAgent.indexOf("Safari") !== -1
+		        );
+		    }
+		    function is_old() {
+		        var ua = navigator.userAgent;
+		        var version = "";
+		        // Helper functions to deal with common regex
+		        function getFirstMatch(regex) {
+		            var match = ua.match(regex);
+		            return (match && match.length > 1 && match[1]) || "";
+		        }
+		        // Detect
+		        // Opera
+		        if (/opera|opr/i.test(ua)) {
+		            version = getFirstMatch(/(?:opera|opr)[\s\/](\d+(\.\d+)?)/i);
+		            return (version < 30);
+		        }
+		        // IE10 and below
+		        if (/msie/i.test(ua)) {
+		            version = getFirstMatch(/(?:msie\s)(\d+(\.\d+)?)/i);
+		            return (version < 11);
+		        }
+		        // IE11
+		        if (/trident/i.test(ua)) {
+		            version = getFirstMatch(/(?:trident)\/(\d+(\.\d+)?)/i);
+		            return (version < 8);
+		        }
+		        // Chrome
+		        if (/chrome|crios|crmo/i.test(ua)) {
+		            version = getFirstMatch(/(?:chrome|crios|crmo)\/(\d+(\.\d+)?)/i);
+		            return (version < 36);
+		        }
+		        // Firefox
+		        if (/firefox/i.test(ua)) {
+		            version = getFirstMatch(/(?:firefox)\/(\d+(\.\d+)?)/i);
+		            return (version < 46);
+		        }
+		        // Firefox iOS, includes Focus
+		        if (/fxios/i.test(ua)) {
+		            version = getFirstMatch(/(?:fxios)\/(\d+(\.\d+)?)/i);
+		            return (version < 7);
+		        }
+		        // Safari
+		        if (/safari/i.test(ua)) {
+		            version = getFirstMatch(/version\/(\d+(\.\d+)?)/i);
+		            return (version < 9);
+		        }
+		        return false; // No redirect
+		    }
+		    function not_excluded_page() {
+		        return (
+		            window.location.href.indexOf("/unsupported-browser/") === -1 &&
+		            document.title.toLowerCase().indexOf("page not found") === -1
+		        );
+		    }
+		    if (is_browser() && is_old() && not_excluded_page()) {
+		        window.location = location.protocol + "//" + location.host + "/unsupported-browser/";
+		    }
+		</script>
+
+		
+		<script>
+			var modern_tribe = window.modern_tribe || {};
+			modern_tribe.fonts = {
+				state: {
+					loading: true,
+					active: false
+				},
+				events: {
+					trigger: function ( event_type, event_data, el ) {
+						var event;
+						try {
+							event = new CustomEvent( event_type, { detail: event_data } );
+						} catch ( e ) {
+							event = document.createEvent( 'CustomEvent' );
+							event.initCustomEvent( event_type, true, true, event_data );
+						}
+						el.dispatchEvent( event );
+					}
+				}
+			};
+			var WebFontConfig = {
+																custom: {
+					families: ["geo-light","geo-medium","geo-regular","geo-semibold"]				},
+								loading: function () {
+					modern_tribe.fonts.state.loading = true;
+					modern_tribe.fonts.state.active = false;
+					modern_tribe.fonts.events.trigger( 'modern_tribe/fonts_loading', {}, document );
+				},
+				active: function () {
+					modern_tribe.fonts.state.loading = false;
+					modern_tribe.fonts.state.active = true;
+					modern_tribe.fonts.events.trigger( 'modern_tribe/fonts_loaded', {}, document );
+				},
+				inactive: function () {
+					modern_tribe.fonts.state.loading = false;
+					modern_tribe.fonts.state.active = false;
+					modern_tribe.fonts.events.trigger( 'modern_tribe/fonts_failed', {}, document );
+				}
+			};
+			(function ( d ) {
+				var wf = d.createElement( 'script' ), s = d.scripts[ 0 ];
+				wf.src = 'https://www.bcit.ca/wp-content/themes/core/js/vendor/webfontloader.js';
+				s.parentNode.insertBefore( wf, s );
+			})( document );
+		</script>
+
+		<title>BCIT &#8211; Education for a Complex World</title>
+        <script>
+	        dataLayer = [];
+        </script>
+        <link rel='dns-prefetch' href='//www.bcit.ca' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel='stylesheet' id='tribe-common-skeleton-style-css'  href='https://www.bcit.ca/wp-content/plugins/event-tickets/common/src/resources/css/common-skeleton.min.css?ver=4.12.5' type='text/css' media='all' />
+<link rel='stylesheet' id='tribe-tooltip-css'  href='https://www.bcit.ca/wp-content/plugins/event-tickets/common/src/resources/css/tooltip.min.css?ver=4.12.5' type='text/css' media='all' />
+<link rel='stylesheet' id='core-theme-base-css'  href='https://www.bcit.ca/wp-content/themes/core/css/dist/master.min.css?ver=4.21.10.07.2020' type='text/css' media='screen' />
+<link rel='stylesheet' id='core-theme-print-css'  href='https://www.bcit.ca/wp-content/themes/core/css/dist/print.min.css?ver=4.21.10.07.2020' type='text/css' media='print' />
+<script type='text/javascript' src='https://www.bcit.ca/wp-content/themes/core/js/vendor/jquery.min.js?ver=4.21.10.07.2020' id='jquery-js'></script>
+<link rel="https://api.w.org/" href="https://www.bcit.ca/wp-json/" /><link rel="alternate" type="application/json" href="https://www.bcit.ca/wp-json/wp/v2/pages/21" /><link rel="canonical" href="https://www.bcit.ca/" />
+<link rel='shortlink' href='https://www.bcit.ca/' />
+
+           <!-- Google Tag Manager -->
+           <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+           new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+           j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+           'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+           })(window,document,'script','dataLayer','GTM-SDML');</script>
+           <!-- End Google Tag Manager -->
+
+   		<meta name="et-api-version" content="v1"><meta name="et-api-origin" content="https://www.bcit.ca"><link rel="https://theeventscalendar.com/" href="https://www.bcit.ca/wp-json/tribe/tickets/v1/" /><meta name="tec-api-version" content="v1"><meta name="tec-api-origin" content="https://www.bcit.ca"><link rel="https://theeventscalendar.com/" href="https://www.bcit.ca/wp-json/tribe/events/v1/" /><link rel="shortcut icon" href="https://www.bcit.ca/wp-content/uploads/2018/10/favicon.ico"><link rel="icon" sizes="192x192" href="https://www.bcit.ca/wp-content/uploads/2018/10/android-icon.png"><link rel="apple-touch-icon-precomposed" href="https://www.bcit.ca/wp-content/uploads/2018/10/apple-touch-icon.png"><meta name="msapplication-TileImage" content="https://www.bcit.ca/wp-content/uploads/2018/11/ms-icon.png"><meta name="msapplication-TileColor" content="#003e6b"><meta name="theme-color" content="#003e6b">		<script>
+			document.documentElement.className = document.documentElement.className.replace( 'no-js', 'js' );
+		</script>
+				<style>
+			.no-js img.lazyload { display: none; }
+			figure.wp-block-image img.lazyloading { min-width: 150px; }
+							.lazyload, .lazyloading { opacity: 0; }
+				.lazyloaded {
+					opacity: 1;
+					transition: opacity 400ms;
+					transition-delay: 0ms;
+				}
+					</style>
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+
+</head>
+<body class="home page-template page-template-page-templates page-template-page-homepage page-template-page-templatespage-homepage-php page page-id-21 has-panels is-panels-page page-hello-bcit-wordpress tribe-no-js tribe-events-filter-view tribe-filters-closed tribe-filters-horizontal">
+
+	
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe 
+        height="0" width="0" style="display:none;visibility:hidden" data-src="https://www.googletagmanager.com/ns.html?id=GTM-SDML" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+
+		
+
+	<a href="#a11y-skip-link-content" class="a11y-skip-link a11y-visual-hide">Skip to main content</a>
+
+	<div class="l-wrapper" data-js="site-wrap">
+
+		<header class="site-header has-utility-nav has-global-alert" data-js="site-header">
+
+			
+	<nav class="site-header__nav-utility site-header__nav-utility--dt" aria-labelledby="site-header__nav-utility-label">
+
+		<h2 id="site-header__nav-utility-label" class="a11y-visual-hide">Utility Navigation</h2>
+
+		<div class="l-container l-container--border-sides site-header__nav-utility__container">
+			<ol class="site-header__nav-list-utility">
+				<li class="menu-item menu-item--depth-0"><a href="https://learn.bcit.ca/"><span class="menu-item__text">Learning Hub</span></a></li>
+<li class="menu-item menu-item--depth-0"><a href="https://my.bcit.ca/"><span class="menu-item__text">myBCIT</span></a></li>
+<li class="menu-item menu-item--depth-0"><a href="https://www.bcit.ca/events/"><span class="menu-item__text">Events</span></a></li>
+<li class="menu-item menu-item--depth-0"><a href="https://www.bcit.ca/current-students/"><span class="menu-item__text">Students</span></a></li>
+<li class="menu-item menu-item--depth-0"><a href="https://www.bcit.ca/faculty-staff/"><span class="menu-item__text">Staff</span></a></li>
+
+			</ol>
+		</div>
+
+	</nav>
+
+
+	
+	<div class="l-container u-border-btm site-header__container">
+
+		<div class="site-header__branding">
+	<a href="https://www.bcit.ca/">
+		<svg class="logo" viewBox="0 0 95 85" xmlns="http://www.w3.org/2000/svg"><path fill="#FFF200" d="M0 0h84.8v84.8H0z"/><path fill="#003C71" d="M8.6 56.4V27.2h7.2c6.7 0 9.7 2.2 9.7 7.6 0 3-1.3 5.1-3.8 6.2v.1c3.3 1.2 4.5 3.7 4.5 7 0 6.7-4.3 8.4-10 8.4H8.6v-.1zm7.4-17c2.5 0 4.7-.9 4.7-4.1 0-3.1-2.3-3.7-4.7-3.7h-2.7v7.8H16zm.5 12.7c3.4 0 4.8-1.2 4.8-4.3 0-3.2-1.6-4.5-4.8-4.5h-3.2v8.8h3.2zm30.9-5.2c-.9 6.5-3.6 9.9-8.9 9.9-7 0-9.3-5.7-9.3-15.1 0-8.4 2.4-14.8 9.3-14.8 5.6 0 7.8 3.5 8.6 9.4l-4.5.4c-.6-3.7-1.9-5.5-4-5.5-3 0-4.5 3.1-4.5 10.5 0 8.1 1.3 10.8 4.5 10.8 2.3 0 3.7-2.1 4.3-6.1l4.5.5zm4.1 9.5V27.2h4.8v29.2h-4.8zm14.8 0V31.6h-6v-4.4h16.8v4.4h-6v24.8h-4.8z"/><path fill="#FFF200" d="M89.426 3.253c.462 0 .84-.13.84-.625 0-.478-.408-.566-.826-.566h-.64v1.19h.626zm.885 2.15l-.77-1.554H88.8v1.554h-.71V1.454h1.304c.973 0 1.572.333 1.572 1.16 0 .48-.248.858-.742 1.046l.899 1.743h-.812zM92.126 3.5c0-1.584-.99-2.86-2.716-2.86-1.743 0-2.744 1.276-2.744 2.86 0 1.627 1 2.862 2.744 2.862 1.727 0 2.716-1.235 2.716-2.862zM86 3.5C86 1.54 87.288 0 89.41 0c2.12 0 3.398 1.54 3.398 3.5 0 1.916-1.278 3.5-3.398 3.5C87.288 7 86 5.416 86 3.5z"/></svg>
+
+	</a>
+</div>
+
+
+					<button class="site-header__search-trigger"
+		aria-label="Open Search"
+		data-js="header-search-icon">
+
+	<i class="icon icon-search"></i>
+</button>
+
+		
+			<button class="site-header__menu-trigger"
+			aria-expanded="false"
+			aria-label="Open Menu"
+			data-js="header-menu-icon">
+
+		<i class="icon icon-bars"></i>
+	</button>
+
+
+		
+	<nav class="site-header__nav site-header__nav--dt" data-js="primary-nav" aria-labelledby="site-header__nav-label">
+
+		<h2 id="site-header__nav-label" class="a11y-visual-hide">Main Navigation</h2>
+
+		<ol class="site-header__nav-list">
+			<li class="menu-item menu-item-has-children menu-item--depth-0"><a href="https://www.bcit.ca/study/" class="menu-item__anchor menu-item__anchor--child" id="menu-item-5761" data-target="sub-menu-5761" data-js="trigger-primary-dropdown" data-id="5761"><span class="menu-item__text">Programs &#038; Courses</span></a><a href="#"  href="https://www.bcit.ca/study/" class="menu-item__anchor menu-item__anchor--child" id="menu-item-5761" data-target="sub-menu-5761" data-js="trigger-primary-dropdown" data-id="5761"><i class="icon icon-plus primary-nav__dropdown-list-icon"></i></a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-has-children menu-item--depth-1"><a href="https://www.bcit.ca/study/applied-natural-sciences/"><span class="menu-item__text">Applied &#038; Natural Sciences</span></a><a href="#"  href="https://www.bcit.ca/study/applied-natural-sciences/"><i class="icon icon-plus primary-nav__dropdown-list-icon"></i></a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/study/business-media/"><span class="menu-item__text">Business &#038; Media</span></a></li>
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/study/computing-it/"><span class="menu-item__text">Computing &#038; IT</span></a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-has-children menu-item--depth-1"><a href="https://www.bcit.ca/study/engineering/"><span class="menu-item__text">Engineering</span></a><a href="#"  href="https://www.bcit.ca/study/engineering/"><i class="icon icon-plus primary-nav__dropdown-list-icon"></i></a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/study/health-sciences/"><span class="menu-item__text">Health Sciences</span></a></li>
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/study/trades-apprenticeships/"><span class="menu-item__text">Trades &#038; Apprenticeships</span></a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-has-children menu-item--depth-1"><a href="https://www.bcit.ca/international-students/"><span class="menu-item__text">International Students</span></a><a href="#"  href="https://www.bcit.ca/international-students/"><i class="icon icon-plus primary-nav__dropdown-list-icon"></i></a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/admission/entrance-requirements/english-requirements/"><span class="menu-item__text">English Training</span></a></li>
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/academic-dates/"><span class="menu-item__text">Academic Dates &#038; Deadlines</span></a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-has-children menu-item--depth-0"><a href="https://www.bcit.ca/admission/" class="menu-item__anchor menu-item__anchor--child" id="menu-item-13133" data-target="sub-menu-13133" data-js="trigger-primary-dropdown" data-id="13133"><span class="menu-item__text">Admission</span></a><a href="#"  href="https://www.bcit.ca/admission/" class="menu-item__anchor menu-item__anchor--child" id="menu-item-13133" data-target="sub-menu-13133" data-js="trigger-primary-dropdown" data-id="13133"><i class="icon icon-plus primary-nav__dropdown-list-icon"></i></a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-has-children menu-item--depth-1"><a href="https://www.bcit.ca/admission/why-bcit/"><span class="menu-item__text">Why BCIT?</span></a><a href="#"  href="https://www.bcit.ca/admission/why-bcit/"><i class="icon icon-plus primary-nav__dropdown-list-icon"></i></a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/admission/how-to-apply/"><span class="menu-item__text">How to Apply</span></a></li>
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/admission/entrance-requirements/"><span class="menu-item__text">Entrance Requirements</span></a></li>
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/admission/tuition-fees/"><span class="menu-item__text">Tuition &amp; Fees</span></a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-has-children menu-item--depth-1"><a href="https://www.bcit.ca/admission/program-availability/"><span class="menu-item__text">Program Availability</span></a><a href="#"  href="https://www.bcit.ca/admission/program-availability/"><i class="icon icon-plus primary-nav__dropdown-list-icon"></i></a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/admission/after-you-apply/"><span class="menu-item__text">After You Apply</span></a></li>
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/admission/forms/"><span class="menu-item__text">Forms</span></a></li>
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/admission/contact-us/"><span class="menu-item__text">Contact Us</span></a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-has-children menu-item--depth-0"><a href="https://www.bcit.ca/student-services/" class="menu-item__anchor menu-item__anchor--child" id="menu-item-5767" data-target="sub-menu-5767" data-js="trigger-primary-dropdown" data-id="5767"><span class="menu-item__text">Student Services</span></a><a href="#"  href="https://www.bcit.ca/student-services/" class="menu-item__anchor menu-item__anchor--child" id="menu-item-5767" data-target="sub-menu-5767" data-js="trigger-primary-dropdown" data-id="5767"><i class="icon icon-plus primary-nav__dropdown-list-icon"></i></a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-has-children menu-item--depth-1"><a href="https://www.bcit.ca/student-services/academic-learning-services/"><span class="menu-item__text">Academic &amp; Learning Services</span></a><a href="#"  href="https://www.bcit.ca/student-services/academic-learning-services/"><i class="icon icon-plus primary-nav__dropdown-list-icon"></i></a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/student-services/campus-amenities/"><span class="menu-item__text">Campus Amenities</span></a></li>
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/student-services/financial-aid-awards/"><span class="menu-item__text">Financial Aid &amp; Awards</span></a></li>
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/library/"><span class="menu-item__text">Library</span></a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-has-children menu-item--depth-1"><a href="https://www.bcit.ca/student-services/health-wellness/"><span class="menu-item__text">Health &amp; Wellness</span></a><a href="#"  href="https://www.bcit.ca/student-services/health-wellness/"><i class="icon icon-plus primary-nav__dropdown-list-icon"></i></a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/safety-security/"><span class="menu-item__text">Safety &#038; Security</span></a></li>
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/student-services/student-life-housing/"><span class="menu-item__text">Student Life &amp; Housing</span></a></li>
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/student-services/technology/"><span class="menu-item__text">Technology</span></a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-has-children menu-item--depth-1"><a href="https://www.bcit.ca/student-services/workplace-career-opportunities/"><span class="menu-item__text">Workplace &amp; Career Opportunities</span></a><a href="#"  href="https://www.bcit.ca/student-services/workplace-career-opportunities/"><i class="icon icon-plus primary-nav__dropdown-list-icon"></i></a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/student-services/indigenous-services/"><span class="menu-item__text">Indigenous Services</span></a></li>
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/student-services/international-student-centre/"><span class="menu-item__text">International Student Centre</span></a></li>
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/student-services/student-association/"><span class="menu-item__text">Student Association</span></a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-has-children menu-item--depth-0"><a href="https://www.bcit.ca/applied-research/" class="menu-item__anchor menu-item__anchor--child" id="menu-item-5773" data-target="sub-menu-5773" data-js="trigger-primary-dropdown" data-id="5773"><span class="menu-item__text">Research</span></a><a href="#"  href="https://www.bcit.ca/applied-research/" class="menu-item__anchor menu-item__anchor--child" id="menu-item-5773" data-target="sub-menu-5773" data-js="trigger-primary-dropdown" data-id="5773"><i class="icon icon-plus primary-nav__dropdown-list-icon"></i></a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item--depth-1"><a href="https://www.bcit.ca/applied-research/working-with-bcit/applied-research-liaison-office/"><span class="menu-item__text">Applied Research Liaison Office</span></a></li>
+	<li class="menu-item menu-item--depth-1"><a href="https://www.bcit.ca/applied-research/cari/"><span class="menu-item__text">Centre for Applied Research &#038; Innovation</span></a></li>
+	<li class="menu-item menu-item--depth-1"><a href="https://www.bcit.ca/applied-research/research-centres/"><span class="menu-item__text">Research Centres</span></a></li>
+	<li class="menu-item menu-item--depth-1"><a href="https://www.bcit.ca/applied-research/people-committees/"><span class="menu-item__text">People &amp; Committees</span></a></li>
+	<li class="menu-item menu-item-has-children menu-item--depth-1"><a href="https://www.bcit.ca/applied-research/working-with-bcit/"><span class="menu-item__text">Working with Us</span></a><a href="#"  href="https://www.bcit.ca/applied-research/working-with-bcit/"><i class="icon icon-plus primary-nav__dropdown-list-icon"></i></a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/applied-research/students/"><span class="menu-item__text">Student Opportunities</span></a></li>
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/applied-research/research-funding/"><span class="menu-item__text">Research Funding</span></a></li>
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/applied-research/contact-us/"><span class="menu-item__text">Contact Research</span></a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-has-children menu-item--depth-0"><a href="https://www.bcit.ca/about/" class="menu-item__anchor menu-item__anchor--child" id="menu-item-5749" data-target="sub-menu-5749" data-js="trigger-primary-dropdown" data-id="5749"><span class="menu-item__text">About BCIT</span></a><a href="#"  href="https://www.bcit.ca/about/" class="menu-item__anchor menu-item__anchor--child" id="menu-item-5749" data-target="sub-menu-5749" data-js="trigger-primary-dropdown" data-id="5749"><i class="icon icon-plus primary-nav__dropdown-list-icon"></i></a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-has-children menu-item--depth-1"><a href="https://www.bcit.ca/about/visit/"><span class="menu-item__text">Visit Us</span></a><a href="#"  href="https://www.bcit.ca/about/visit/"><i class="icon icon-plus primary-nav__dropdown-list-icon"></i></a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/about/schools/"><span class="menu-item__text">Our Schools</span></a></li>
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/about/community/"><span class="menu-item__text">Community</span></a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-has-children menu-item--depth-1"><a href="https://www.bcit.ca/about/leadership-vision/"><span class="menu-item__text">Leadership &#038; Vision</span></a><a href="#"  href="https://www.bcit.ca/about/leadership-vision/"><i class="icon icon-plus primary-nav__dropdown-list-icon"></i></a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/about/news-events/"><span class="menu-item__text">News &#038; Events</span></a></li>
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/about/careers/"><span class="menu-item__text">Careers at BCIT</span></a></li>
+	</ul>
+</li>
+</ul>
+</li>
+
+		</ol>
+
+	</nav>
+
+
+		
+    <nav class="site-header__nav site-header__nav--mb" data-js="primary-nav-mb" aria-labelledby="site-header__nav-label">
+
+                    
+	<nav class="site-header__nav-utility site-header__nav-utility--mb"
+	     aria-labelledby="site-header__nav-utility-label">
+
+		<h2 id="site-header__nav-utility-label"
+		    class="a11y-visual-hide">Utility Navigation</h2>
+
+		<div class="l-container l-container--border-sides site-header__nav-utility__container">
+			<ol class="site-header__nav-list-utility">
+				<li class="menu-item menu-item--depth-0"><a href="https://learn.bcit.ca/"><span class="menu-item__text">Learning Hub</span></a></li>
+<li class="menu-item menu-item--depth-0"><a href="https://my.bcit.ca/"><span class="menu-item__text">myBCIT</span></a></li>
+<li class="menu-item menu-item--depth-0"><a href="https://www.bcit.ca/events/"><span class="menu-item__text">Events</span></a></li>
+<li class="menu-item menu-item--depth-0"><a href="https://www.bcit.ca/current-students/"><span class="menu-item__text">Students</span></a></li>
+<li class="menu-item menu-item--depth-0"><a href="https://www.bcit.ca/faculty-staff/"><span class="menu-item__text">Staff</span></a></li>
+
+			</ol>
+		</div>
+
+	</nav>
+
+        
+        <h2 id="site-header__nav-label" class="a11y-visual-hide">Main Mobile Navigation</h2>
+
+        <ol class="site-header__nav-list">
+            <li class="menu-item menu-item-has-children menu-item--depth-0"><a href="https://www.bcit.ca/study/" class="menu-item__anchor menu-item__anchor--child" id="menu-item-5761" data-target="sub-menu-5761" data-js="trigger-primary-dropdown" data-id="5761"><span class="menu-item__text">Programs &#038; Courses</span></a><a href="#"  href="https://www.bcit.ca/study/" class="menu-item__anchor menu-item__anchor--child" id="menu-item-5761" data-target="sub-menu-5761" data-js="trigger-primary-dropdown" data-id="5761"><i class="icon icon-plus primary-nav__dropdown-list-icon"></i></a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-has-children menu-item--depth-1"><a href="https://www.bcit.ca/study/applied-natural-sciences/"><span class="menu-item__text">Applied &#038; Natural Sciences</span></a><a href="#"  href="https://www.bcit.ca/study/applied-natural-sciences/"><i class="icon icon-plus primary-nav__dropdown-list-icon"></i></a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/study/business-media/"><span class="menu-item__text">Business &#038; Media</span></a></li>
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/study/computing-it/"><span class="menu-item__text">Computing &#038; IT</span></a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-has-children menu-item--depth-1"><a href="https://www.bcit.ca/study/engineering/"><span class="menu-item__text">Engineering</span></a><a href="#"  href="https://www.bcit.ca/study/engineering/"><i class="icon icon-plus primary-nav__dropdown-list-icon"></i></a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/study/health-sciences/"><span class="menu-item__text">Health Sciences</span></a></li>
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/study/trades-apprenticeships/"><span class="menu-item__text">Trades &#038; Apprenticeships</span></a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-has-children menu-item--depth-1"><a href="https://www.bcit.ca/international-students/"><span class="menu-item__text">International Students</span></a><a href="#"  href="https://www.bcit.ca/international-students/"><i class="icon icon-plus primary-nav__dropdown-list-icon"></i></a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/admission/entrance-requirements/english-requirements/"><span class="menu-item__text">English Training</span></a></li>
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/academic-dates/"><span class="menu-item__text">Academic Dates &#038; Deadlines</span></a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-has-children menu-item--depth-0"><a href="https://www.bcit.ca/admission/" class="menu-item__anchor menu-item__anchor--child" id="menu-item-13133" data-target="sub-menu-13133" data-js="trigger-primary-dropdown" data-id="13133"><span class="menu-item__text">Admission</span></a><a href="#"  href="https://www.bcit.ca/admission/" class="menu-item__anchor menu-item__anchor--child" id="menu-item-13133" data-target="sub-menu-13133" data-js="trigger-primary-dropdown" data-id="13133"><i class="icon icon-plus primary-nav__dropdown-list-icon"></i></a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-has-children menu-item--depth-1"><a href="https://www.bcit.ca/admission/why-bcit/"><span class="menu-item__text">Why BCIT?</span></a><a href="#"  href="https://www.bcit.ca/admission/why-bcit/"><i class="icon icon-plus primary-nav__dropdown-list-icon"></i></a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/admission/how-to-apply/"><span class="menu-item__text">How to Apply</span></a></li>
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/admission/entrance-requirements/"><span class="menu-item__text">Entrance Requirements</span></a></li>
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/admission/tuition-fees/"><span class="menu-item__text">Tuition &amp; Fees</span></a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-has-children menu-item--depth-1"><a href="https://www.bcit.ca/admission/program-availability/"><span class="menu-item__text">Program Availability</span></a><a href="#"  href="https://www.bcit.ca/admission/program-availability/"><i class="icon icon-plus primary-nav__dropdown-list-icon"></i></a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/admission/after-you-apply/"><span class="menu-item__text">After You Apply</span></a></li>
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/admission/forms/"><span class="menu-item__text">Forms</span></a></li>
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/admission/contact-us/"><span class="menu-item__text">Contact Us</span></a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-has-children menu-item--depth-0"><a href="https://www.bcit.ca/student-services/" class="menu-item__anchor menu-item__anchor--child" id="menu-item-5767" data-target="sub-menu-5767" data-js="trigger-primary-dropdown" data-id="5767"><span class="menu-item__text">Student Services</span></a><a href="#"  href="https://www.bcit.ca/student-services/" class="menu-item__anchor menu-item__anchor--child" id="menu-item-5767" data-target="sub-menu-5767" data-js="trigger-primary-dropdown" data-id="5767"><i class="icon icon-plus primary-nav__dropdown-list-icon"></i></a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-has-children menu-item--depth-1"><a href="https://www.bcit.ca/student-services/academic-learning-services/"><span class="menu-item__text">Academic &amp; Learning Services</span></a><a href="#"  href="https://www.bcit.ca/student-services/academic-learning-services/"><i class="icon icon-plus primary-nav__dropdown-list-icon"></i></a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/student-services/campus-amenities/"><span class="menu-item__text">Campus Amenities</span></a></li>
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/student-services/financial-aid-awards/"><span class="menu-item__text">Financial Aid &amp; Awards</span></a></li>
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/library/"><span class="menu-item__text">Library</span></a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-has-children menu-item--depth-1"><a href="https://www.bcit.ca/student-services/health-wellness/"><span class="menu-item__text">Health &amp; Wellness</span></a><a href="#"  href="https://www.bcit.ca/student-services/health-wellness/"><i class="icon icon-plus primary-nav__dropdown-list-icon"></i></a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/safety-security/"><span class="menu-item__text">Safety &#038; Security</span></a></li>
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/student-services/student-life-housing/"><span class="menu-item__text">Student Life &amp; Housing</span></a></li>
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/student-services/technology/"><span class="menu-item__text">Technology</span></a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-has-children menu-item--depth-1"><a href="https://www.bcit.ca/student-services/workplace-career-opportunities/"><span class="menu-item__text">Workplace &amp; Career Opportunities</span></a><a href="#"  href="https://www.bcit.ca/student-services/workplace-career-opportunities/"><i class="icon icon-plus primary-nav__dropdown-list-icon"></i></a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/student-services/indigenous-services/"><span class="menu-item__text">Indigenous Services</span></a></li>
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/student-services/international-student-centre/"><span class="menu-item__text">International Student Centre</span></a></li>
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/student-services/student-association/"><span class="menu-item__text">Student Association</span></a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-has-children menu-item--depth-0"><a href="https://www.bcit.ca/applied-research/" class="menu-item__anchor menu-item__anchor--child" id="menu-item-5773" data-target="sub-menu-5773" data-js="trigger-primary-dropdown" data-id="5773"><span class="menu-item__text">Research</span></a><a href="#"  href="https://www.bcit.ca/applied-research/" class="menu-item__anchor menu-item__anchor--child" id="menu-item-5773" data-target="sub-menu-5773" data-js="trigger-primary-dropdown" data-id="5773"><i class="icon icon-plus primary-nav__dropdown-list-icon"></i></a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item--depth-1"><a href="https://www.bcit.ca/applied-research/working-with-bcit/applied-research-liaison-office/"><span class="menu-item__text">Applied Research Liaison Office</span></a></li>
+	<li class="menu-item menu-item--depth-1"><a href="https://www.bcit.ca/applied-research/cari/"><span class="menu-item__text">Centre for Applied Research &#038; Innovation</span></a></li>
+	<li class="menu-item menu-item--depth-1"><a href="https://www.bcit.ca/applied-research/research-centres/"><span class="menu-item__text">Research Centres</span></a></li>
+	<li class="menu-item menu-item--depth-1"><a href="https://www.bcit.ca/applied-research/people-committees/"><span class="menu-item__text">People &amp; Committees</span></a></li>
+	<li class="menu-item menu-item-has-children menu-item--depth-1"><a href="https://www.bcit.ca/applied-research/working-with-bcit/"><span class="menu-item__text">Working with Us</span></a><a href="#"  href="https://www.bcit.ca/applied-research/working-with-bcit/"><i class="icon icon-plus primary-nav__dropdown-list-icon"></i></a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/applied-research/students/"><span class="menu-item__text">Student Opportunities</span></a></li>
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/applied-research/research-funding/"><span class="menu-item__text">Research Funding</span></a></li>
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/applied-research/contact-us/"><span class="menu-item__text">Contact Research</span></a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-has-children menu-item--depth-0"><a href="https://www.bcit.ca/about/" class="menu-item__anchor menu-item__anchor--child" id="menu-item-5749" data-target="sub-menu-5749" data-js="trigger-primary-dropdown" data-id="5749"><span class="menu-item__text">About BCIT</span></a><a href="#"  href="https://www.bcit.ca/about/" class="menu-item__anchor menu-item__anchor--child" id="menu-item-5749" data-target="sub-menu-5749" data-js="trigger-primary-dropdown" data-id="5749"><i class="icon icon-plus primary-nav__dropdown-list-icon"></i></a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-has-children menu-item--depth-1"><a href="https://www.bcit.ca/about/visit/"><span class="menu-item__text">Visit Us</span></a><a href="#"  href="https://www.bcit.ca/about/visit/"><i class="icon icon-plus primary-nav__dropdown-list-icon"></i></a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/about/schools/"><span class="menu-item__text">Our Schools</span></a></li>
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/about/community/"><span class="menu-item__text">Community</span></a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-has-children menu-item--depth-1"><a href="https://www.bcit.ca/about/leadership-vision/"><span class="menu-item__text">Leadership &#038; Vision</span></a><a href="#"  href="https://www.bcit.ca/about/leadership-vision/"><i class="icon icon-plus primary-nav__dropdown-list-icon"></i></a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/about/news-events/"><span class="menu-item__text">News &#038; Events</span></a></li>
+		<li class="menu-item menu-item--depth-2"><a href="https://www.bcit.ca/about/careers/"><span class="menu-item__text">Careers at BCIT</span></a></li>
+	</ul>
+</li>
+</ul>
+</li>
+
+        </ol>
+
+                    <ol class="site-header__nav-secondary-list">
+                <li class="menu-item menu-item--depth-0"><a href="https://www.bcit.ca/infosessions/"><span class="menu-item__text">Attend an Info Session</span></a></li>
+<li class="menu-item menu-item--depth-0"><a href="https://www.bcit.ca/admission/how-to-apply/application-steps/"><span class="menu-item__text">Apply to a Program</span></a></li>
+<li class="menu-item menu-item--depth-0"><a href="https://www.bcit.ca/foundation/giving-to-bcit/"><span class="menu-item__text">Give to BCIT</span></a></li>
+
+            </ol>
+        
+    </nav>
+
+
+
+					<div class="site-header__search" data-js="site-header-search">
+	<form class="site-header__search-form" role="search" method="get" action="/s/">
+		<label for="site-header-search" class="site-header__search-label a11y-visual-hide">Search</label>
+		<input id="site-header-search" class="site-header__search-input" type="text" name="query" autocomplete="off">
+		<input type="hidden" name="profile" value="_default">
+		<input type="hidden" name="collection" value="bcit-search">
+		<button class="site-header__search-btn" aria-label="Search Submit" type="submit">
+			<i class="icon icon-search"></i>
+		</button>
+	</form>
+</div>
+
+		
+		
+	</div>
+</header>
+
+	<div class="site-header__global_alert global_alert--info" aria-labelledby="site-header__global_alert-label">
+	<div class="l-container l-container--border-sides site-header__global_alert__container">
+		<div class="global_alert--icon global_alert__icon--info"></div>
+		<div class="global_alert--message"><span class="global_alert--link"><a href="https://www.bcit.ca/breaking-news/">COVID-19 Institute response</a><span></div>
+		<!--
+		<div class="global_alert global_alert--closebutton">
+					<a aria-label="close" class="global_alert--btn-closed global_alert_info--btn-closed" data-js="close-ga">
+			</a>
+				</div>
+		-->
+	</div>
+</div>
+
+
+
+
+<a id="a11y-skip-link-content" tabindex="-1"></a>
+
+<main>
+
+	
+			<div id="emptyHomepageBanner" class="homepage--canvas"></div>
+<div class="site-hero" data-js="homepage--banner"></div>
+
+	
+			<div class="l-container l-container--border-sides page--full-width">
+			<div class="panel-collection" data-modular-content-collection>
+	
+		
+
+		<section class="panel s-wrapper s-wrapper--no-padding site-panel--wysiwyg" data-index="0" data-js="panel" data-type="wysiwyg" aria-label="wysiwyg-0" data-modular-content id="wysiwyg-0">
+	
+			<div class="l-container site-panel--wysiwyg__container ">
+		
+	
+	
+			<div class="s-content site-panel--wysiwyg__content ">
+									<div class="t-content site-panel--wysiwyg--title-block">
+						
+<h2
+			class="s-title"
+    	>
+
+</h2>
+
+					</div>
+								<div class="g-row g-row--center site-panel--wysiwyg-row g-row--col-3--min-full" data-depth="0" data-name="columns" data-livetext>
+
+											<div class="g-col t-content site-panel--wysiwyg-col" data-depth="1" data-index="0" data-name="column_content" data-autop="true" data-livetext="true">
+
+							<h2>Welcome to BCIT</h2>
+
+						</div>
+											<div class="g-col t-content site-panel--wysiwyg-col" data-depth="1" data-index="1" data-name="column_content" data-autop="true" data-livetext="true">
+
+							<p>Different than a college or university, the British Columbia Institute of Technology offers practical, applied education with instructors who have direct, hands-on experience in their field.</p>
+
+						</div>
+											<div class="g-col t-content site-panel--wysiwyg-col" data-depth="1" data-index="2" data-name="column_content" data-autop="true" data-livetext="true">
+
+							<p style="text-align: center;"><a class="c-btn" href="https://www.bcit.ca/study/">View Programs &amp; Courses</a></p>
+
+						</div>
+					
+				</div>
+			</div>
+
+
+		
+				
+			</div>
+	
+			</section>
+	
+
+
+		
+
+			<section  class="panel s-wrapper site-panel site-panel--sliderrssloop"
+				 data-index="1"
+				 data-js="panel"
+				 data-type="sliderrssloop"
+				 data-modular-content
+				 id="sliderrssloop-1">
+	
+	
+	
+	
+		
+<div class="c-slider l-container l-container--border-sides u-bc-blue">
+					<div class="c-slider__arrows">
+			<div class="c-slider__button c-slider__button--prev swiper-button-prev"></div>
+			<div class="c-slider__button c-slider__button--next swiper-button-next"></div>
+		</div>
+		<div class="c-slider__main swiper-container c-slider__main--has-arrows c-slider__main slider--overlay" data-js='c-slider' data-swiper-options='{&quot;autoplay&quot;: {&quot;delay&quot;: 8000}, &quot;speed&quot;: 1000, &quot;loop&quot;: true}'>
+		<div class="c-slider__wrapper swiper-wrapper">
+							<div class="c-slider__slide swiper-slide">
+					
+<div >
+		<div style="background-image:url('https://commons.bcit.ca/news/files/2020/06/rsz_220180426-1224.jpg');" role="img" aria-label="British Columbia Institute of Technology (BCIT)" style="background-image:url('');"  class="c-image__bg">
+	
+		
+		
+		
+		
+
+		</div>
+	</div>
+
+<div class="c-content-block t-content c-content-block--content-slider">
+
+	<div class="c-content-block__content c-content-block__desc--content-slider">
+
+		
+					<a href ="https://commons.bcit.ca/news/2020/10/update-on-winter2021/">
+<h2
+		>
+
+	Update on Winter 2021: safe, transformational, and applied education
+
+</h2></a>
+		
+		
+					<p>As students, faculty, and staff have settled into the Fall term here at BCIT, many are asking about how programs will be delivered as they continue their studies and work...</p>
+		
+					
+<a class=" c-btn c-btn--sm c-btn--inverse"
+				href="https://commons.bcit.ca/news/2020/10/update-on-winter2021/"
+			>
+					<span class="c-btn__text" >Read More</span>
+			</a>
+
+		
+	</div>
+</div>
+
+				</div>
+							<div class="c-slider__slide swiper-slide">
+					
+<div >
+		<div style="background-image:url('https://commons.bcit.ca/news/files/2020/09/Trish-Pekeles-1-scaled.jpg');" role="img" aria-label="British Columbia Institute of Technology (BCIT)" style="background-image:url('');"  class="c-image__bg">
+	
+		
+		
+		
+		
+
+		</div>
+	</div>
+
+<div class="c-content-block t-content c-content-block--content-slider">
+
+	<div class="c-content-block__content c-content-block__desc--content-slider">
+
+		
+					<a href ="https://commons.bcit.ca/news/2020/09/trish-pekeles-cfo-vp-finance-corporate-services/">
+<h2
+		>
+
+	Trish Pekeles joins BCIT as CFO and Vice President, Finance and Corporate Services
+
+</h2></a>
+		
+		
+					<p>BCIT is pleased to welcome Trish Pekeles as Chief Financial Officer (CFO) and Vice President, Finance and Corporate Services. With a diverse background spanning leadership experience in large complex organizations...</p>
+		
+					
+<a class=" c-btn c-btn--sm c-btn--inverse"
+				href="https://commons.bcit.ca/news/2020/09/trish-pekeles-cfo-vp-finance-corporate-services/"
+			>
+					<span class="c-btn__text" >Read More</span>
+			</a>
+
+		
+	</div>
+</div>
+
+				</div>
+							<div class="c-slider__slide swiper-slide">
+					
+<div >
+		<div style="background-image:url('https://commons.bcit.ca/news/files/2020/09/AA-donation-creative_News_1200px.jpg');" role="img" aria-label="British Columbia Institute of Technology (BCIT)" style="background-image:url('');"  class="c-image__bg">
+	
+		
+		
+		
+		
+
+		</div>
+	</div>
+
+<div class="c-content-block t-content c-content-block--content-slider">
+
+	<div class="c-content-block__content c-content-block__desc--content-slider">
+
+		
+					<a href ="https://commons.bcit.ca/news/2020/09/one-million-reasons-to-smile-bcit-alumni-association-pledges-historic-gift-to-establish-the-bcit-alumni-centre/">
+<h2
+		>
+
+	One million reasons to smile: BCIT Alumni Association pledges historic gift to establish the BCIT Alumni Centre
+
+</h2></a>
+		
+		
+					<p>The BCIT Alumni Association (BCITAA) is proud to announce its largest-ever donation. “On behalf of the Alumni Association board, I am proud to pledge $1 million to the BCIT INSPIRE...</p>
+		
+					
+<a class=" c-btn c-btn--sm c-btn--inverse"
+				href="https://commons.bcit.ca/news/2020/09/one-million-reasons-to-smile-bcit-alumni-association-pledges-historic-gift-to-establish-the-bcit-alumni-centre/"
+			>
+					<span class="c-btn__text" >Read More</span>
+			</a>
+
+		
+	</div>
+</div>
+
+				</div>
+							<div class="c-slider__slide swiper-slide">
+					
+<div >
+		<div style="background-image:url('https://commons.bcit.ca/news/files/2020/09/71497764_2552140538211638_5194752344532713472_o.jpg');" role="img" aria-label="British Columbia Institute of Technology (BCIT)" style="background-image:url('');"  class="c-image__bg">
+	
+		
+		
+		
+		
+
+		</div>
+	</div>
+
+<div class="c-content-block t-content c-content-block--content-slider">
+
+	<div class="c-content-block__content c-content-block__desc--content-slider">
+
+		
+					<a href ="https://commons.bcit.ca/news/2020/09/gvbot-leaders-of-tomorrow-recognition/">
+<h2
+		>
+
+	BCIT celebrates recognition from Greater Vancouver Board of Trade Leaders of Tomorrow program
+
+</h2></a>
+		
+		
+					<p>Congratulations to recent BCIT Marketing Communications alumnus Lester de Guzman for receiving the Greater Vancouver Board of Trade (GVBOT) Leadership in Excellence Award. Awarded on September 16 at the 2019/2020...</p>
+		
+					
+<a class=" c-btn c-btn--sm c-btn--inverse"
+				href="https://commons.bcit.ca/news/2020/09/gvbot-leaders-of-tomorrow-recognition/"
+			>
+					<span class="c-btn__text" >Read More</span>
+			</a>
+
+		
+	</div>
+</div>
+
+				</div>
+							<div class="c-slider__slide swiper-slide">
+					
+<div >
+		<div style="background-image:url('https://commons.bcit.ca/news/files/2020/09/Render2.jpg');" role="img" aria-label="British Columbia Institute of Technology (BCIT)" style="background-image:url('');"  class="c-image__bg">
+	
+		
+		
+		
+		
+
+		</div>
+	</div>
+
+<div class="c-content-block t-content c-content-block--content-slider">
+
+	<div class="c-content-block__content c-content-block__desc--content-slider">
+
+		
+					<a href ="https://commons.bcit.ca/news/2020/09/mass-timber-project-student-housing/">
+<h2
+		>
+
+	Province invests in mass timber project for new student housing at BCIT
+
+</h2></a>
+		
+		
+					<p>Students attending the British Columbia Institute of Technology (BCIT) in the coming years will have access to hundreds of new, affordable, and environmentally friendly on-campus housing beds. “Students throughout the...</p>
+		
+					
+<a class=" c-btn c-btn--sm c-btn--inverse"
+				href="https://commons.bcit.ca/news/2020/09/mass-timber-project-student-housing/"
+			>
+					<span class="c-btn__text" >Read More</span>
+			</a>
+
+		
+	</div>
+</div>
+
+				</div>
+					</div>
+			</div>
+	</div>
+
+
+	
+				
+	
+			</section>
+	
+
+
+		
+
+		<section class="panel s-wrapper s-wrapper--no-padding site-panel--wysiwyg" data-index="2" data-js="panel" data-type="wysiwyg" aria-label="wysiwyg-2" data-modular-content id="wysiwyg-2">
+	
+			<div class="l-container site-panel--wysiwyg__container wysiwyg_padding-top--none">
+		
+	
+	
+			<div class="s-content site-panel--wysiwyg__content ">
+									<div class="t-content site-panel--wysiwyg--title-block">
+						
+<h2
+			class="s-title"
+    	>
+
+</h2>
+
+					</div>
+								<div class="g-row g-row--center site-panel--wysiwyg-row g-row--col-4--min-full" data-depth="0" data-name="columns" data-livetext>
+
+											<div class="g-col t-content site-panel--wysiwyg-col" data-depth="1" data-index="0" data-name="column_content" data-autop="true" data-livetext="true">
+
+							<h2>Welcome</h2>
+<ul class="linklist">
+<li><a href="https://www.bcit.ca/admission/why-bcit/">Prospective Students</a></li>
+<li><a href="https://www.bcit.ca/pts/">Part-time Students</a></li>
+<li><a href="https://www.bcit.ca/international/">International Students</a></li>
+<li><a href="https://www.bcit.ca/admission/why-bcit/parents-families/">Parents</a> &amp; <a href="https://www.bcit.ca/counsellorsguide/">Counsellors</a></li>
+<li><a href="https://www.bcit.ca/industryservices/">Business &amp; Industry</a></li>
+<li><a href="https://www.bcit.ca/alumni/">Alumni</a> &amp; <a href="https://www.bcit.ca/foundation/">Donors</a></li>
+</ul>
+
+						</div>
+											<div class="g-col t-content site-panel--wysiwyg-col" data-depth="1" data-index="1" data-name="column_content" data-autop="true" data-livetext="true">
+
+							<h2>Learn</h2>
+<ul class="linklist">
+<li><a href="https://www.bcit.ca/study/applied-natural-sciences/">Applied &amp; Natural Sciences</a></li>
+<li><a href="/study/business-media/">Business &amp; Media</a></li>
+<li><a href="https://www.bcit.ca/study/computing-it/">Computing &amp; IT</a></li>
+<li><a href="https://www.bcit.ca/study/engineering/">Engineering</a></li>
+<li><a href="https://www.bcit.ca/study/health-sciences/">Health Sciences</a></li>
+<li><a href="https://www.bcit.ca/study/trades-apprenticeships/">Trades &amp; Apprenticeship</a></li>
+</ul>
+
+						</div>
+											<div class="g-col t-content site-panel--wysiwyg-col" data-depth="1" data-index="2" data-name="column_content" data-autop="true" data-livetext="true">
+
+							<h2>Connect</h2>
+<ul class="linklist">
+<li><a href="https://www.bcit.ca/infosessions/">Attend an Info Session</a></li>
+<li><a href="https://www.bcit.ca/biginfo/">Register for Big Info</a></li>
+<li><a href="https://www.bcit.ca/experience/">View campus highlights</a></li>
+<li><a href="https://www.bcit.ca/advising/">Connect with an Advisor</a></li>
+<li><a href="https://commons.bcit.ca/news/">BCIT News</a></li>
+</ul>
+
+						</div>
+											<div class="g-col t-content site-panel--wysiwyg-col" data-depth="1" data-index="3" data-name="column_content" data-autop="true" data-livetext="true">
+
+							<h2>Study</h2>
+<ul class="linklist">
+<li><a href="https://www.bcit.ca/admission/program-availability/">View program availability</a></li>
+<li><a href="https://www.bcit.ca/admission/how-to-apply/">Apply to a Full-time Program</a></li>
+<li><a href="https://www.bcit.ca/admission/how-to-apply/program-declaration/">Apply to a Part-time Program</a></li>
+<li><a href="https://www.bcit.ca/pts/register/">Register for a Part-time Studies Course</a></li>
+</ul>
+
+						</div>
+					
+				</div>
+			</div>
+
+
+		
+				
+			</div>
+	
+			</section>
+	
+
+
+		
+
+		<section class="panel s-wrapper s-wrapper--no-padding site-panel site-panel--interstitial
+												has_img
+									" data-index="3" data-js="panel" data-type="interstitial" aria-label="interstitial-3" data-modular-content id="interstitial-3">
+	
+	
+	
+	
+					
+<div class="c-image site-panel--interstitial__img">
+		<div  role="img" aria-label="covidmsg3" style="background-image:url('https://www.bcit.ca/wp-content/uploads/2020/05/covidmsg3.png');"  class="c-image__bg">
+	
+		
+		
+		
+		
+
+		</div>
+	</div>
+
+		
+		
+		
+			<div class="l-container l-container--border-sides site-panel--interstitial__container layout--center">
+
+				<div class="site-panel--interstitial__content-block">
+
+					
+
+					
+<div
+			class="t-content site-panel--interstitial__desc"
+    	>
+<h2>Studying during COVID-19</h2>
+<p><a class="c-btn c-btn--inverse" href="https://www.bcit.ca/student-services/health-wellness">Wellness resources</a>     <a class="c-btn c-btn--inverse" href="https://www.bcit.ca/covid-19">Important information</a></p>
+
+</div>
+
+
+					
+
+				</div>
+
+			</div>
+
+		
+	
+				
+	
+			</section>
+	
+
+
+		
+
+	<section class="panel s-wrapper s-wrapper--no-padding site-panel site-panel--spacer"
+		 data-index="4"
+		 data-js="panel"
+		 data-type="spacer"
+		 aria-label="spacer-4"
+		 data-modular-content>
+
+		<div class="l-container l-container--no-padding-lr l-container--border-sides site-panel--spacer-sm site-panel--spacer-padding-top">
+
+	
+	
+	<div class="s-content">
+		<hr class="site-panel--spacer__hr "/>
+	</div>
+
+
+				
+			</div>
+	
+			</section>
+	
+
+
+		
+
+		<section class="panel s-wrapper s-wrapper--no-padding site-panel site-panel--interstitial
+												has_img
+												has-overlay--low
+		" data-index="5" data-js="panel" data-type="interstitial" aria-label="interstitial-5" data-modular-content id="interstitial-5">
+	
+	
+	
+	
+					
+<div class="c-image site-panel--interstitial__img parallax__container">
+		<div  role="img" aria-label="homepage_interstitial_hsc" style="background-image:url('https://www.bcit.ca/wp-content/uploads/2020/03/homepage_interstitial_hsc.jpg');"  class="c-image__bg parallax__img">
+	
+		
+		
+		
+		
+
+		</div>
+	</div>
+
+		
+		
+		
+			<div class="l-container l-container--border-sides site-panel--interstitial__container layout--center">
+
+				<div class="site-panel--interstitial__content-block">
+
+					
+<span
+			class="title-overline site-panel--interstitial__tagline"
+    	>
+<span>the campaign for bcit</span>
+</span>
+
+
+					
+<div
+			class="t-content site-panel--interstitial__desc"
+    	>
+<h2>Inspiring a bold new chapter</h2>
+<p>The largest initiative in our 50 year history, we are transforming the BCIT campus into a dynamic new learning environment where solutions to our most urgent challenges are born, tested and readied for the world.</p>
+
+</div>
+
+
+					
+<a class=" c-btn site-panel--interstitial__cta"
+				href="https://www.bcit.ca/inspire"
+			>
+					<span class="c-btn__text" >visit inspire</span>
+			</a>
+
+
+				</div>
+
+			</div>
+
+		
+	
+				
+	
+			</section>
+	
+
+
+		
+
+		<section class="panel s-wrapper s-wrapper--no-padding site-panel site-panel--interstitial
+												has_img
+									" data-index="6" data-js="panel" data-type="interstitial" aria-label="interstitial-6" data-modular-content id="interstitial-6">
+	
+	
+	
+	
+					
+<div class="c-image site-panel--interstitial__img parallax__container">
+		<div  role="img" aria-label="Watch and win Campaign" style="background-image:url('https://www.bcit.ca/wp-content/uploads/2020/09/4448_watch_win_bg_banner-1-scaled.jpg');"  class="c-image__bg parallax__img">
+	
+		
+		
+		
+		
+
+		</div>
+	</div>
+
+		
+		
+		
+			<div class="l-container l-container--border-sides site-panel--interstitial__container layout--left">
+
+				<div class="site-panel--interstitial__content-block">
+
+					
+
+					
+<div
+			class="t-content site-panel--interstitial__desc"
+    	>
+<h4><img loading="lazy"   alt="Watch and Win contest" width="300" height="206" data-src="https://www.bcit.ca/wp-content/uploads/2020/09/4448_watch_win_lockup_rev_rgb-300x206.png" class="alignleft size-medium wp-image-474609 lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img loading="lazy" class="alignleft size-medium wp-image-474609" src="https://www.bcit.ca/wp-content/uploads/2020/09/4448_watch_win_lockup_rev_rgb-300x206.png" alt="Watch and Win contest" width="300" height="206" /></noscript>Have a chance to win tuition prizes by registering and attending any info session in your desired area of study between October 1 — December 31.</h4>
+<p><a class="c-btn c-btn--inverse" href="/contests-promotions/">Find out more</a></p>
+
+</div>
+
+
+					
+
+				</div>
+
+			</div>
+
+		
+	
+				
+	
+			</section>
+	
+
+
+		
+
+		<section class="panel s-wrapper s-wrapper--no-padding site-panel site-panel--eventsloop" data-index="7" data-js="panel" data-type="eventsloop" aria-label="eventsloop-7" data-modular-content id="eventsloop-7">
+	
+			<div class="l-container l-container--border-sides l-container--border-btm site-panel--eventsloop__container">
+		
+	
+	
+			<div class="s-content u-border-btm">
+				<div class="site-panel--eventsloop__row" >
+
+											<div class="g-col site-panel__title-wrap u-hide--mobile">
+							
+							<h2 class="site-panel__title s-title h2" data-name="title" data-livetext data-depth="0" data-index="0">BCIT Events</h2>
+						</div>
+					
+					
+<div class="c-slider">
+						<div class="c-slider__view-more">
+				
+<a class=" "
+				href="https://www.bcit.ca/events/"
+			>
+					<span class="c-btn__text" >See all events</span>
+			</a>
+
+			</div>
+				<div class="c-slider__arrows">
+			<div class="c-slider__button c-slider__button--prev swiper-button-prev"></div>
+			<div class="c-slider__button c-slider__button--next swiper-button-next"></div>
+		</div>
+		<div class="c-slider__main swiper-container c-slider__main--has-carousel c-slider__main--has-arrows " data-js='c-slider' data-swiper-options='{
+		&quot;slidesPerView&quot;:3,
+		&quot;spaceBetween&quot;:0,
+		&quot;breakpoints&quot;:{&quot;700&quot;:{&quot;slidesPerView&quot;:&quot;auto&quot;, &quot;freemode&quot;:&quot;true&quot;},&quot;960&quot;:{&quot;slidesPerView&quot;:2},&quot;1260&quot;:{&quot;slidesPerView&quot;:2}}}'>
+		<div class="c-slider__wrapper swiper-wrapper">
+							<div class="c-slider__slide swiper-slide">
+					<div class="site-panel__title-wrap u-hide--desktop"><h2 class="site-panel__title s-title" data-name="title" data-livetext data-depth="0" data-index="0">BCIT Events</h2></div>
+				</div>
+							<div class="c-slider__slide swiper-slide">
+					
+<div class="c-card">
+
+			<div class="site-panel--eventsloop__event" href="https://www.bcit.ca/event/interior-design-programs-information-session-online-2/">
+	
+	
+					<div class="c-card__content">
+
+									<div class="site-panel--eventsloop__category">Engineering<br>Info Sessions<br>Online Information Sessions<br>School of Construction &amp; the Environment</div>
+<a class=" anchor--cta-overlay"
+				href="https://www.bcit.ca/event/interior-design-programs-information-session-online-2/"
+			>
+	</a>
+
+				
+				
+									
+<h3
+		class="site-panel--eventsloop__event-title"
+		>
+
+	(Full) Interior Design Programs Information Session &#8211; Online
+
+</h3>
+				
+									
+<div
+			class="site-panel--eventsloop__event-date"
+    	>
+<span class="month-day"><span class="month">Oct</span><span class="day">13</span></span>
+</div>
+
+				
+				
+			</div>
+		
+			
+<div
+			class="site-panel--eventsloop__meta"
+    	>
+<p class="site-panel--eventsloop__excerpt">Interior Design is an exciting and rewarding career that draws upon creative, technical and problem-solving expertise to improve&hellip;</p><span class="site-panel--eventsloop__time ">5:00 PM TO 6:00 PM</span>
+</div>
+</div>
+	
+</div>
+
+				</div>
+							<div class="c-slider__slide swiper-slide">
+					
+<div class="c-card">
+
+			<div class="site-panel--eventsloop__event" href="https://www.bcit.ca/event/telecommunications-systems-technician-information-session/">
+	
+	
+					<div class="c-card__content">
+
+									<div class="site-panel--eventsloop__category">Engineering<br>Info Sessions<br>Online Information Sessions<br>School of Energy<br>Trades &amp; Apprenticeship</div>
+<a class=" anchor--cta-overlay"
+				href="https://www.bcit.ca/event/telecommunications-systems-technician-information-session/"
+			>
+	</a>
+
+				
+				
+									
+<h3
+		class="site-panel--eventsloop__event-title"
+		>
+
+	Telecommunications Systems Technician Information Session
+
+</h3>
+				
+									
+<div
+			class="site-panel--eventsloop__event-date"
+    	>
+<span class="month-day"><span class="month">Oct</span><span class="day">13</span></span>
+</div>
+
+				
+				
+			</div>
+		
+			
+<div
+			class="site-panel--eventsloop__meta"
+    	>
+<p class="site-panel--eventsloop__excerpt">Welcome to the Telecommunications Systems Technician Information Session registration. Join us online to get your questions answered, and get&hellip;</p><span class="site-panel--eventsloop__time ">5:00 PM TO 6:00 PM</span>
+</div>
+</div>
+	
+</div>
+
+				</div>
+							<div class="c-slider__slide swiper-slide">
+					
+<div class="c-card">
+
+			<div class="site-panel--eventsloop__event" href="https://www.bcit.ca/event/computer-information-technology-online-information-session/">
+	
+	
+					<div class="c-card__content">
+
+									<div class="site-panel--eventsloop__category">Computing &amp; Information Technology<br>Info Sessions<br>Online Information Sessions<br>School of Computing &amp; Academic Studies</div>
+<a class=" anchor--cta-overlay"
+				href="https://www.bcit.ca/event/computer-information-technology-online-information-session/"
+			>
+	</a>
+
+				
+				
+									
+<h3
+		class="site-panel--eventsloop__event-title"
+		>
+
+	Computer Information Technology Diploma Program Online Information Session
+
+</h3>
+				
+									
+<div
+			class="site-panel--eventsloop__event-date"
+    	>
+<span class="month-day"><span class="month">Oct</span><span class="day">13</span></span>
+</div>
+
+				
+				
+			</div>
+		
+			
+<div
+			class="site-panel--eventsloop__meta"
+    	>
+<p class="site-panel--eventsloop__excerpt">Learn more about Computer Information Technology Diploma Program and join us for an online session on Tuesday, October&hellip;</p><span class="site-panel--eventsloop__time ">5:30 PM TO 6:30 PM</span>
+</div>
+</div>
+	
+</div>
+
+				</div>
+							<div class="c-slider__slide swiper-slide">
+					
+<div class="c-card">
+
+			<div class="site-panel--eventsloop__event" href="https://www.bcit.ca/event/chemical-and-environmental-technology-information-session/">
+	
+	
+					<div class="c-card__content">
+
+									<div class="site-panel--eventsloop__category">Applied &amp; Natural Sciences<br>Engineering<br>Info Sessions<br>Online Information Sessions<br>School of Energy</div>
+<a class=" anchor--cta-overlay"
+				href="https://www.bcit.ca/event/chemical-and-environmental-technology-information-session/"
+			>
+	</a>
+
+				
+				
+									
+<h3
+		class="site-panel--eventsloop__event-title"
+		>
+
+	Chemical and Environmental Technology Information Session
+
+</h3>
+				
+									
+<div
+			class="site-panel--eventsloop__event-date"
+    	>
+<span class="month-day"><span class="month">Oct</span><span class="day">13</span></span>
+</div>
+
+				
+				
+			</div>
+		
+			
+<div
+			class="site-panel--eventsloop__meta"
+    	>
+<p class="site-panel--eventsloop__excerpt">Welcome to the Chemical and Environmental Technology Information Session registration. Join us online to get your questions answered, and&hellip;</p><span class="site-panel--eventsloop__time ">6:00 PM TO 7:00 PM</span>
+</div>
+</div>
+	
+</div>
+
+				</div>
+							<div class="c-slider__slide swiper-slide">
+					
+<div class="c-card">
+
+			<div class="site-panel--eventsloop__event" href="https://www.bcit.ca/event/forensic-health-science-online-info-session/">
+	
+	
+					<div class="c-card__content">
+
+									<div class="site-panel--eventsloop__category">Computing &amp; Information Technology<br>Info Sessions<br>School of Computing &amp; Academic Studies</div>
+<a class=" anchor--cta-overlay"
+				href="https://www.bcit.ca/event/forensic-health-science-online-info-session/"
+			>
+	</a>
+
+				
+				
+									
+<h3
+		class="site-panel--eventsloop__event-title"
+		>
+
+	Forensic Health Science Online Info Session
+
+</h3>
+				
+									
+<div
+			class="site-panel--eventsloop__event-date"
+    	>
+<span class="month-day"><span class="month">Oct</span><span class="day">13</span></span>
+</div>
+
+				
+				
+			</div>
+		
+			
+<div
+			class="site-panel--eventsloop__meta"
+    	>
+<p class="site-panel--eventsloop__excerpt">This is your opportunity to ask questions about Forensic Health Science Program!  Join us for an online Q&amp;A&hellip;</p><span class="site-panel--eventsloop__time ">6:00 PM TO 8:00 PM</span>
+</div>
+</div>
+	
+</div>
+
+				</div>
+							<div class="c-slider__slide swiper-slide">
+					
+<div class="c-card">
+
+			<div class="site-panel--eventsloop__event" href="https://www.bcit.ca/event/automotive-technician-automotive-refinishing-body-repair-and-motorcycle-and-power-equipment-information-session-online-3/">
+	
+	
+					<div class="c-card__content">
+
+									<div class="site-panel--eventsloop__category">Info Sessions<br>School of Transportation<br>Trades &amp; Apprenticeship</div>
+<a class=" anchor--cta-overlay"
+				href="https://www.bcit.ca/event/automotive-technician-automotive-refinishing-body-repair-and-motorcycle-and-power-equipment-information-session-online-3/"
+			>
+	</a>
+
+				
+				
+									
+<h3
+		class="site-panel--eventsloop__event-title"
+		>
+
+	Automotive Technician, Automotive Refinishing / Body Repair and Motorcycle and Power Equipment Information Session (Online)
+
+</h3>
+				
+									
+<div
+			class="site-panel--eventsloop__event-date"
+    	>
+<span class="month-day"><span class="month">Oct</span><span class="day">13</span></span>
+</div>
+
+				
+				
+			</div>
+		
+			
+<div
+			class="site-panel--eventsloop__meta"
+    	>
+<span class="site-panel--eventsloop__time ">6:00 PM TO 9:00 PM</span>
+</div>
+</div>
+	
+</div>
+
+				</div>
+							<div class="c-slider__slide swiper-slide">
+					
+<div class="c-card">
+
+			<div class="site-panel--eventsloop__event" href="https://www.bcit.ca/event/part-time-civil-technology-public-works-info-session-online-2/">
+	
+	
+					<div class="c-card__content">
+
+									<div class="site-panel--eventsloop__category">Engineering<br>Info Sessions<br>Online Information Sessions<br>School of Construction &amp; the Environment</div>
+<a class=" anchor--cta-overlay"
+				href="https://www.bcit.ca/event/part-time-civil-technology-public-works-info-session-online-2/"
+			>
+	</a>
+
+				
+				
+									
+<h3
+		class="site-panel--eventsloop__event-title"
+		>
+
+	Part-time Civil Technology &amp; Public Works Info Session &#8211; Online
+
+</h3>
+				
+									
+<div
+			class="site-panel--eventsloop__event-date"
+    	>
+<span class="month-day"><span class="month">Oct</span><span class="day">14</span></span>
+</div>
+
+				
+				
+			</div>
+		
+			
+<div
+			class="site-panel--eventsloop__meta"
+    	>
+<p class="site-panel--eventsloop__excerpt">The BCIT Civil Technology Part-time Studies (PTS) programs and courses provide continuing education and professional development opportunities for&hellip;</p><span class="site-panel--eventsloop__time ">4:00 PM TO 5:00 PM</span>
+</div>
+</div>
+	
+</div>
+
+				</div>
+							<div class="c-slider__slide swiper-slide">
+					
+<div class="c-card">
+
+			<div class="site-panel--eventsloop__event" href="https://www.bcit.ca/event/industrial-network-cybersecurity-information-session/">
+	
+	
+					<div class="c-card__content">
+
+									<div class="site-panel--eventsloop__category">Computing &amp; Information Technology<br>Engineering<br>Info Sessions<br>Online Information Sessions<br>School of Energy</div>
+<a class=" anchor--cta-overlay"
+				href="https://www.bcit.ca/event/industrial-network-cybersecurity-information-session/"
+			>
+	</a>
+
+				
+				
+									
+<h3
+		class="site-panel--eventsloop__event-title"
+		>
+
+	Industrial Network Cybersecurity Information Session
+
+</h3>
+				
+									
+<div
+			class="site-panel--eventsloop__event-date"
+    	>
+<span class="month-day"><span class="month">Oct</span><span class="day">14</span></span>
+</div>
+
+				
+				
+			</div>
+		
+			
+<div
+			class="site-panel--eventsloop__meta"
+    	>
+<p class="site-panel--eventsloop__excerpt">Welcome to the Industrial Network Cybersecurity Information Session registration. Join us online to get your questions answered, and get&hellip;</p><span class="site-panel--eventsloop__time ">5:00 PM TO 6:00 PM</span>
+</div>
+</div>
+	
+</div>
+
+				</div>
+							<div class="c-slider__slide swiper-slide">
+					
+<div class="c-card">
+
+			<div class="site-panel--eventsloop__event" href="https://www.bcit.ca/event/sustainable-energy-management-building-controls-energy-management-info-session-online-2/">
+	
+	
+					<div class="c-card__content">
+
+									<div class="site-panel--eventsloop__category">Applied &amp; Natural Sciences<br>Engineering<br>Info Sessions<br>Online Information Sessions<br>School of Construction &amp; the Environment</div>
+<a class=" anchor--cta-overlay"
+				href="https://www.bcit.ca/event/sustainable-energy-management-building-controls-energy-management-info-session-online-2/"
+			>
+	</a>
+
+				
+				
+									
+<h3
+		class="site-panel--eventsloop__event-title"
+		>
+
+	Sustainable Energy Management &amp; Building Controls Energy Management Info Session – Online
+
+</h3>
+				
+									
+<div
+			class="site-panel--eventsloop__event-date"
+    	>
+<span class="month-day"><span class="month">Oct</span><span class="day">14</span></span>
+</div>
+
+				
+				
+			</div>
+		
+			
+<div
+			class="site-panel--eventsloop__meta"
+    	>
+<p class="site-panel--eventsloop__excerpt">Sustainable Energy Management Advanced Certificate (SEMAC) and Building Controls and Energy Management (BCEM) programs are completely online part-time&hellip;</p><span class="site-panel--eventsloop__time ">5:30 PM TO 6:30 PM</span>
+</div>
+</div>
+	
+</div>
+
+				</div>
+							<div class="c-slider__slide swiper-slide">
+					
+<div class="c-card">
+
+			<div class="site-panel--eventsloop__event" href="https://www.bcit.ca/event/computer-information-systems-administration-information-session/">
+	
+	
+					<div class="c-card__content">
+
+									<div class="site-panel--eventsloop__category">Computing &amp; Information Technology<br>Engineering<br>Info Sessions<br>Online Information Sessions<br>School of Energy</div>
+<a class=" anchor--cta-overlay"
+				href="https://www.bcit.ca/event/computer-information-systems-administration-information-session/"
+			>
+	</a>
+
+				
+				
+									
+<h3
+		class="site-panel--eventsloop__event-title"
+		>
+
+	Computer Information Systems Administration Information Session
+
+</h3>
+				
+									
+<div
+			class="site-panel--eventsloop__event-date"
+    	>
+<span class="month-day"><span class="month">Oct</span><span class="day">14</span></span>
+</div>
+
+				
+				
+			</div>
+		
+			
+<div
+			class="site-panel--eventsloop__meta"
+    	>
+<p class="site-panel--eventsloop__excerpt">Welcome to the Computer Information Systems Administration Information Session registration. Join us online to get your questions answered, and&hellip;</p><span class="site-panel--eventsloop__time ">6:00 PM TO 7:00 PM</span>
+</div>
+</div>
+	
+</div>
+
+				</div>
+							<div class="c-slider__slide swiper-slide">
+					
+<div class="c-card">
+
+			<div class="site-panel--eventsloop__event" href="https://www.bcit.ca/event/automotive-technician-automotive-refinishing-body-repair-and-motorcycle-and-power-equipment-information-session-online/">
+	
+	
+					<div class="c-card__content">
+
+									<div class="site-panel--eventsloop__category">Info Sessions<br>School of Transportation<br>Trades &amp; Apprenticeship</div>
+<a class=" anchor--cta-overlay"
+				href="https://www.bcit.ca/event/automotive-technician-automotive-refinishing-body-repair-and-motorcycle-and-power-equipment-information-session-online/"
+			>
+	</a>
+
+				
+				
+									
+<h3
+		class="site-panel--eventsloop__event-title"
+		>
+
+	Automotive Technician, Automotive Refinishing / Body Repair and Motorcycle and Power Equipment Information Session (Online)
+
+</h3>
+				
+									
+<div
+			class="site-panel--eventsloop__event-date"
+    	>
+<span class="month-day"><span class="month">Oct</span><span class="day">14</span></span>
+</div>
+
+				
+				
+			</div>
+		
+			
+<div
+			class="site-panel--eventsloop__meta"
+    	>
+<span class="site-panel--eventsloop__time ">6:00 PM TO 9:00 PM</span>
+</div>
+</div>
+	
+</div>
+
+				</div>
+							<div class="c-slider__slide swiper-slide">
+					
+<div class="c-card">
+
+			<div class="site-panel--eventsloop__event" href="https://www.bcit.ca/event/forensic-science-online-info-session/">
+	
+	
+					<div class="c-card__content">
+
+									<div class="site-panel--eventsloop__category">Computing &amp; Information Technology<br>Info Sessions<br>Online Information Sessions<br>School of Computing &amp; Academic Studies</div>
+<a class=" anchor--cta-overlay"
+				href="https://www.bcit.ca/event/forensic-science-online-info-session/"
+			>
+	</a>
+
+				
+				
+									
+<h3
+		class="site-panel--eventsloop__event-title"
+		>
+
+	Forensic Science Online Info Session
+
+</h3>
+				
+									
+<div
+			class="site-panel--eventsloop__event-date"
+    	>
+<span class="month-day"><span class="month">Oct</span><span class="day">14</span></span>
+</div>
+
+				
+				
+			</div>
+		
+			
+<div
+			class="site-panel--eventsloop__meta"
+    	>
+<p class="site-panel--eventsloop__excerpt">This is your opportunity to ask questions about Forensic Science Programs!  Join us for an online Q&amp;A session&hellip;</p><span class="site-panel--eventsloop__time ">6:00 PM TO 8:00 PM</span>
+</div>
+</div>
+	
+</div>
+
+				</div>
+					</div>
+			</div>
+			<div class="c-slider__carousel swiper-container" data-js='c-slider-carousel'>
+			<div class="swiper-wrapper">
+							</div>
+		</div>
+	</div>
+
+
+				</div>
+			</div>
+
+		
+				
+			</div>
+	
+			</section>
+	
+
+
+		
+
+	<section class="panel s-wrapper s-wrapper--no-padding site-panel site-panel--spacer"
+		 data-index="8"
+		 data-js="panel"
+		 data-type="spacer"
+		 aria-label="spacer-8"
+		 data-modular-content>
+
+		<div class="l-container l-container--no-padding-lr l-container--border-sides site-panel--spacer-sm site-panel--spacer-padding-top">
+
+	
+	
+	<div class="s-content">
+		<hr class="site-panel--spacer__hr "/>
+	</div>
+
+
+				
+			</div>
+	
+			</section>
+	
+
+
+		
+
+			<section  class="panel s-wrapper site-panel s-wrapper--no-padding site-panel--imagetext"
+				 data-index="9"
+				 data-js="panel"
+				 data-type="imagetext"
+				 data-modular-content
+				 id="imagetext-9">
+	
+	
+	
+			<div class="l-container l-container--border-sides l-container--border-btm site-panel--imagetext__container">
+			<div class="g-row g-row--no-gutters u-border-btm g-row--reorder-2-col">
+				<div class="g-col g-col--one-third">
+					
+<div class="c-image c-image--rect">
+		<div  role="img" aria-label="Girl leaning against an airplane in a hangar." style="background-image:url('https://www.bcit.ca/wp-content/uploads/2020/02/BCIT-Danny-Cameron-Aircraft-Maintenance-Engineering-student-01-1500x1500.jpg');"  class="c-image__bg site-panel--imagetext__img">
+	
+		
+		
+		
+		
+
+		</div>
+	</div>
+
+				</div>
+
+				<div class="g-col g-col--vertical-center g-col--two-thirds">
+
+					<div class="t-content site-panel--imagetext__content">
+						
+<div class="c-content-block">
+
+	<div class="c-content-block__content">
+
+					
+<span
+			class="title-overline site-panel--imagetext__tagline"
+    	>
+<span>Student Spotlight</span>
+</span>
+
+		
+					
+<h2
+		class="site-panel--imagetext__title"
+		>
+
+	A career in aircraft maintenance
+
+</h2>
+		
+		
+					
+<div
+		>
+<p>“I want to see everything,” Danny Cameron said. “Getting into aviation could hopefully afford me some opportunities to travel more and to connect with people from all over the world.”</p>
+<p>All her life, Danny was immersed in mechanics. She is well-versed in tinkering with car engines, but working with aircraft presents a whole new set of challenges.</p>
+
+</div>
+
+		
+					
+<a class=" c-btn_text"
+				href="https://commons.bcit.ca/news/2020/01/danny-cameron/"
+			target="_self"
+		>
+					<span class="c-btn__text" >Read more about Danny's path</span>
+			</a>
+
+		
+	</div>
+</div>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	
+				
+	
+			</section>
+	
+
+
+		
+
+		<section class="panel s-wrapper s-wrapper--no-padding site-panel site-panel--interstitial
+							has_bg_video u-bc-blue
+							has-overlay--high
+		" data-index="10" data-js="panel" data-type="interstitial" aria-label="interstitial-10" data-modular-content id="interstitial-10">
+	
+	
+	
+	
+		
+					<div class="interstial-bg-video has-overlay--high" data-js="tribe-video-wall" data-url="https://vimeo.com/395851553"></div>
+		
+		
+			<div class="l-container l-container--border-sides site-panel--interstitial__container layout--left">
+
+				<div class="site-panel--interstitial__content-block">
+
+					
+<span
+			class="title-overline site-panel--interstitial__tagline"
+    	>
+<span>education for a complex world</span>
+</span>
+
+
+					
+<div
+			class="t-content site-panel--interstitial__desc"
+    	>
+<h2>At BCIT, you&#8217;ll learn to turn big challenges into new solutions, no matter your field of study.</h2>
+<p><a class="c-btn c-btn--inverse" href="http://bcit.ca/admission/why-bcit/">Learn how</a></p>
+
+</div>
+
+
+					
+
+				</div>
+
+			</div>
+
+		
+	
+				
+	
+			</section>
+	
+
+
+		
+
+	<section class="panel s-wrapper s-wrapper--no-padding site-panel site-panel--spacer"
+		 data-index="11"
+		 data-js="panel"
+		 data-type="spacer"
+		 aria-label="spacer-11"
+		 data-modular-content>
+
+		<div class="l-container l-container--no-padding-lr l-container--border-sides site-panel--spacer-lg ">
+
+	
+	
+	<div class="s-content">
+		<hr class="site-panel--spacer__hr "/>
+	</div>
+
+
+				
+			</div>
+	
+			</section>
+	
+
+
+		
+
+	<section class="panel s-wrapper s-wrapper--no-padding site-panel site-panel--spacer"
+		 data-index="12"
+		 data-js="panel"
+		 data-type="spacer"
+		 aria-label="spacer-12"
+		 data-modular-content>
+
+		<div class="l-container l-container--no-padding-lr l-container--border-sides site-panel--spacer-sm site-panel--spacer-padding-top">
+
+	
+	
+	<div class="s-content">
+		<hr class="site-panel--spacer__hr "/>
+	</div>
+
+
+				
+			</div>
+	
+			</section>
+	
+
+</div>
+		</div>
+	
+
+</main>
+
+
+	
+		<!--NOINDEX-->
+<footer class="site-footer has-global-alert">
+	<div class="l-container l-container--border-sides site-footer__container">
+					<div class="g-row g-row--col-4--min-full g-row--no-margin site-footer__content u-border-top u-border-btm">
+
+									<div class="g-col">
+						<div class="sidebar__widget sidebar-footer__widget sidebar__widget--widget_text"><h3 class="sidebar__title sidebar-loop__title h6">Contact</h3>			<div class="textwidget"><p>3700 Willingdon Ave.</p>
+<p>Burnaby, British Columbia</p>
+<p>Canada V5G 3H2</p>
+<p><a href="https://www.bcit.ca"><strong>bcit.ca</strong></a></p>
+</div>
+		</div><div class="sidebar__widget sidebar-footer__widget sidebar__widget--widget_text">			<div class="textwidget"><p>Telephone: <a href="tel:1-604-434-5734">604-434-5734</a><br />
+Toll-free (Can/US): <a href="tel:1-866-434-1610">1-866-434-1610</a></p>
+<p><strong><a href="https://www.bcit.ca/contacts/">More contact numbers</a></strong></p>
+</div>
+		</div>
+
+						<div class="site-footer__social">
+							<aside class="social-follow">
+
+	<ul class="social-follow__list">
+					<li class="social-follow__item social-follow__item--facebook">
+				<a href="https://www.facebook.com/bcit.ca" class="social-follow__anchor" rel="me noopener"
+				   title="Like us on Facebook" target="_blank">
+					<i class="icon icon-facebook"></i>
+					<span class="a11y-visual-hide">Like us on Facebook</span>
+				</a>
+			</li>
+					<li class="social-follow__item social-follow__item--twitter">
+				<a href="https://twitter.com/bcit" class="social-follow__anchor" rel="me noopener"
+				   title="Follow us on Twitter" target="_blank">
+					<i class="icon icon-twitter"></i>
+					<span class="a11y-visual-hide">Follow us on Twitter</span>
+				</a>
+			</li>
+					<li class="social-follow__item social-follow__item--linkedin">
+				<a href="https://www.linkedin.com/school/bcit/" class="social-follow__anchor" rel="me noopener"
+				   title="Add us on LinkedIn" target="_blank">
+					<i class="icon icon-linkedin"></i>
+					<span class="a11y-visual-hide">Add us on LinkedIn</span>
+				</a>
+			</li>
+					<li class="social-follow__item social-follow__item--instagram">
+				<a href="https://www.instagram.com/lifeatbcit/" class="social-follow__anchor" rel="me noopener"
+				   title="Follow us on Instagram" target="_blank">
+					<i class="icon icon-instagram"></i>
+					<span class="a11y-visual-hide">Follow us on Instagram</span>
+				</a>
+			</li>
+		
+	</ul>
+
+</aside>
+
+						</div>
+
+						<div class="site-footer__copyright site-footer__copyright--mb">
+							<nav class="footer-nav footer-nav--utility">
+								<ol class="footer-nav__list">
+	<li>
+		<a href="/it-services/website-feedback/">Feedback</a>
+	</li>
+	<li>
+		<a href="/copyright/">Copyright</a>
+	</li>
+	<li>
+		<a href="/privacy/">Privacy</a>
+	</li>
+</ol>
+
+							</nav>
+						</div>
+					</div>
+				
+									<div class="g-col">
+						<nav class="footer-nav">
+							<ol class="footer-nav__list">
+								<li class="menu-item menu-item--depth-0"><a href="https://www.bcit.ca/about/visit/">Visit</a></li><li class="menu-item menu-item--depth-0"><a href="https://secure.bcit.ca/sis/apply/">Apply Now</a></li><li class="menu-item menu-item--depth-0"><a href="https://www.bcit.ca/foundation/giving-to-bcit/">Give</a></li>
+							</ol>
+						</nav>
+					</div>
+				
+									<div class="g-col">
+						<nav class="footer-nav">
+							<ol class="footer-nav__list">
+								<li class="menu-item menu-item--depth-0"><a href="https://commons.bcit.ca/news/">News</a></li><li class="menu-item menu-item--depth-0"><a href="https://www.bcit.ca/events/">Events</a></li><li class="menu-item menu-item--depth-0"><a href="https://www.bcit.ca/about/careers/">Careers</a></li>
+							</ol>
+						</nav>
+					</div>
+				
+
+				<div class="g-col">
+											<h3 class="sidebar__title sidebar-loop__title h6">
+							Campus Information
+						</h3>
+						<nav class="footer-nav footer-nav--campus-info">
+							<ol class="footer-nav__list">
+	<li>
+		<a href="/about/visit/campuses-directions/burnaby/">Burnaby Campus</a>
+	</li>
+	<li>
+		<a href="/about/visit/campuses-directions/downtown/">Downtown Campus</a>
+	</li>
+	<li>
+		<a href="/about/visit/campuses-directions/marine/">Marine Campus</a>
+	</li>
+	<li>
+		<a href="/about/visit/campuses-directions/aerospace/">Aerospace Technology Campus</a>
+	</li>
+	<li>
+		<a href="/about/visit/campuses-directions/annacis-island/">Annacis Island Campus</a>
+	</li>
+</ol>
+
+						</nav>
+					
+					<div class="site-footer__copyright site-footer__copyright--dt" data-js="footer--feedback">
+						<nav class="footer-nav footer-nav--utility">
+							<ol class="footer-nav__list">
+	<li>
+		<a href="/it-services/website-feedback/">Feedback</a>
+	</li>
+	<li>
+		<a href="/copyright/">Copyright</a>
+	</li>
+	<li>
+		<a href="/privacy/">Privacy</a>
+	</li>
+</ol>
+
+						</nav>
+					</div>
+				</div>
+
+			</div>
+			</div>
+</footer>
+<!--ENDNOINDEX-->
+
+
+	</div><!-- .l-wrapper -->
+
+			<script>window.Promise ||
+			document.write('<script src="https://www.bcit.ca/wp-content/themes/core/js/vendor/es6-promise.auto.js"><\/script>');
+		</script>
+				<script>
+		( function ( body ) {
+			'use strict';
+			body.className = body.className.replace( /\btribe-no-js\b/, 'tribe-js' );
+		} )( document.body );
+		</script>
+		<script> /* <![CDATA[ */var tribe_l10n_datatables = {"aria":{"sort_ascending":": activate to sort column ascending","sort_descending":": activate to sort column descending"},"length_menu":"Show _MENU_ entries","empty_table":"No data available in table","info":"Showing _START_ to _END_ of _TOTAL_ entries","info_empty":"Showing 0 to 0 of 0 entries","info_filtered":"(filtered from _MAX_ total entries)","zero_records":"No matching records found","search":"Search:","all_selected_text":"All items on this page were selected. ","select_all_link":"Select all pages","clear_selection":"Clear Selection.","pagination":{"all":"All","next":"Next","previous":"Previous"},"select":{"rows":{"0":"","_":": Selected %d rows","1":": Selected 1 row"}},"datepicker":{"dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesMin":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Prev","currentText":"Today","closeText":"Done","today":"Today","clear":"Clear"},"registration_prompt":"There is unsaved attendee information. Are you sure you want to continue?"};/* ]]> */ </script><script type='text/javascript' src='https://www.bcit.ca/wp-content/themes/core/js/dist/vendor.min.js?ver=4.21.10.07.2020' id='core-webpack-vendors-js'></script>
+<script type='text/javascript' id='core-theme-scripts-js-extra'>
+/* <![CDATA[ */
+var modern_tribe_i18n = {"help_text":{"msg_limit":"There is a limit to the messages you can post.","close_search":"Close Search","open_search":"Open Search","close_menu":"Close Menu","open_menu":"Open Menu"},"tooltips":{"add_to_save":"Add Photo to Saved Items","in_this_photo":"Products in this photo"}};
+var modern_tribe_config = {"images_url":"https:\/\/www.bcit.ca\/wp-content\/themes\/core\/img\/theme","template_url":"https:\/\/www.bcit.ca\/wp-content\/themes\/core\/","primary_nav":{"menu_items":[{"label":"Programs &#038; Courses","id":"menu-item-5761","classes":" menu-item menu-item-has-children menu-item--depth-0","url":"https:\/\/www.bcit.ca\/study\/","class":"menu-item__anchor menu-item__anchor--child","data-target":"sub-menu-5761","data-js":"trigger-primary-dropdown","data-id":5761,"menu_id":5761,"has_children":true,"menu_items":[{"label":"Applied &#038; Natural Sciences","classes":" menu-item menu-item-has-children menu-item--depth-1","url":"https:\/\/www.bcit.ca\/study\/applied-natural-sciences\/","menu_id":6138,"has_children":true,"menu_items":[{"label":"Business &#038; Media","classes":" menu-item menu-item--depth-2","url":"https:\/\/www.bcit.ca\/study\/business-media\/","menu_id":6144,"has_children":false,"meta":[]},{"label":"Computing &#038; IT","classes":" menu-item menu-item--depth-2","url":"https:\/\/www.bcit.ca\/study\/computing-it\/","menu_id":6150,"has_children":false,"meta":[]}],"meta":[]},{"label":"Engineering","classes":" menu-item menu-item-has-children menu-item--depth-1","url":"https:\/\/www.bcit.ca\/study\/engineering\/","menu_id":6156,"has_children":true,"menu_items":[{"label":"Health Sciences","classes":" menu-item menu-item--depth-2","url":"https:\/\/www.bcit.ca\/study\/health-sciences\/","menu_id":6162,"has_children":false,"meta":[]},{"label":"Trades &#038; Apprenticeships","classes":" menu-item menu-item--depth-2","url":"https:\/\/www.bcit.ca\/study\/trades-apprenticeships\/","menu_id":6168,"has_children":false,"meta":[]}],"meta":[]},{"label":"International Students","classes":" menu-item menu-item-has-children menu-item--depth-1","url":"https:\/\/www.bcit.ca\/international-students\/","menu_id":6174,"has_children":true,"menu_items":[{"label":"English Training","classes":" menu-item menu-item--depth-2","url":"https:\/\/www.bcit.ca\/admission\/entrance-requirements\/english-requirements\/","menu_id":6180,"has_children":false,"meta":[]},{"label":"Academic Dates &#038; Deadlines","classes":" menu-item menu-item--depth-2","url":"https:\/\/www.bcit.ca\/academic-dates\/","menu_id":69727,"has_children":false,"meta":[]}],"meta":[]}],"meta":[]},{"label":"Admission","id":"menu-item-13133","classes":" menu-item menu-item-has-children menu-item--depth-0","url":"https:\/\/www.bcit.ca\/admission\/","class":"menu-item__anchor menu-item__anchor--child","data-target":"sub-menu-13133","data-js":"trigger-primary-dropdown","data-id":13133,"menu_id":13133,"has_children":true,"menu_items":[{"label":"Why BCIT?","classes":" menu-item menu-item-has-children menu-item--depth-1","url":"https:\/\/www.bcit.ca\/admission\/why-bcit\/","menu_id":6186,"has_children":true,"menu_items":[{"label":"How to Apply","classes":" menu-item menu-item--depth-2","url":"https:\/\/www.bcit.ca\/admission\/how-to-apply\/","menu_id":6270,"has_children":false,"meta":[]},{"label":"Entrance Requirements","classes":" menu-item menu-item--depth-2","url":"https:\/\/www.bcit.ca\/admission\/entrance-requirements\/","menu_id":5785,"has_children":false,"meta":[]},{"label":"Tuition &amp; Fees","classes":" menu-item menu-item--depth-2","url":"https:\/\/www.bcit.ca\/admission\/tuition-fees\/","menu_id":236631,"has_children":false,"meta":[]}],"meta":[]},{"label":"Program Availability","classes":" menu-item menu-item-has-children menu-item--depth-1","url":"https:\/\/www.bcit.ca\/admission\/program-availability\/","menu_id":6258,"has_children":true,"menu_items":[{"label":"After You Apply","classes":" menu-item menu-item--depth-2","url":"https:\/\/www.bcit.ca\/admission\/after-you-apply\/","menu_id":5779,"has_children":false,"meta":[]},{"label":"Forms","classes":" menu-item menu-item--depth-2","url":"https:\/\/www.bcit.ca\/admission\/forms\/","menu_id":10097,"has_children":false,"meta":[]},{"label":"Contact Us","classes":" menu-item menu-item--depth-2","url":"https:\/\/www.bcit.ca\/admission\/contact-us\/","menu_id":6246,"has_children":false,"meta":[]}],"meta":[]}],"meta":[]},{"label":"Student Services","id":"menu-item-5767","classes":" menu-item menu-item-has-children menu-item--depth-0","url":"https:\/\/www.bcit.ca\/student-services\/","class":"menu-item__anchor menu-item__anchor--child","data-target":"sub-menu-5767","data-js":"trigger-primary-dropdown","data-id":5767,"menu_id":5767,"has_children":true,"menu_items":[{"label":"Academic &amp; Learning Services","classes":" menu-item menu-item-has-children menu-item--depth-1","url":"https:\/\/www.bcit.ca\/student-services\/academic-learning-services\/","menu_id":419261,"has_children":true,"menu_items":[{"label":"Campus Amenities","classes":" menu-item menu-item--depth-2","url":"https:\/\/www.bcit.ca\/student-services\/campus-amenities\/","menu_id":419269,"has_children":false,"meta":[]},{"label":"Financial Aid &amp; Awards","classes":" menu-item menu-item--depth-2","url":"https:\/\/www.bcit.ca\/student-services\/financial-aid-awards\/","menu_id":419313,"has_children":false,"meta":[]},{"label":"Library","classes":" menu-item menu-item--depth-2","url":"https:\/\/www.bcit.ca\/library\/","menu_id":6348,"has_children":false,"meta":[]}],"meta":[]},{"label":"Health &amp; Wellness","classes":" menu-item menu-item-has-children menu-item--depth-1","url":"https:\/\/www.bcit.ca\/student-services\/health-wellness\/","menu_id":419277,"has_children":true,"menu_items":[{"label":"Safety &#038; Security","classes":" menu-item menu-item--depth-2","url":"https:\/\/www.bcit.ca\/safety-security\/","menu_id":6366,"has_children":false,"meta":[]},{"label":"Student Life &amp; Housing","classes":" menu-item menu-item--depth-2","url":"https:\/\/www.bcit.ca\/student-services\/student-life-housing\/","menu_id":419301,"has_children":false,"meta":[]},{"label":"Technology","classes":" menu-item menu-item--depth-2","url":"https:\/\/www.bcit.ca\/student-services\/technology\/","menu_id":419417,"has_children":false,"meta":[]}],"meta":[]},{"label":"Workplace &amp; Career Opportunities","classes":" menu-item menu-item-has-children menu-item--depth-1","url":"https:\/\/www.bcit.ca\/student-services\/workplace-career-opportunities\/","menu_id":419285,"has_children":true,"menu_items":[{"label":"Indigenous Services","classes":" menu-item menu-item--depth-2","url":"https:\/\/www.bcit.ca\/student-services\/indigenous-services\/","menu_id":6354,"has_children":false,"meta":[]},{"label":"International Student Centre","classes":" menu-item menu-item--depth-2","url":"https:\/\/www.bcit.ca\/student-services\/international-student-centre\/","menu_id":419297,"has_children":false,"meta":[]},{"label":"Student Association","classes":" menu-item menu-item--depth-2","url":"https:\/\/www.bcit.ca\/student-services\/student-association\/","menu_id":6372,"has_children":false,"meta":[]}],"meta":[]}],"meta":[]},{"label":"Research","id":"menu-item-5773","classes":" menu-item menu-item-has-children menu-item--depth-0","url":"https:\/\/www.bcit.ca\/applied-research\/","class":"menu-item__anchor menu-item__anchor--child","data-target":"sub-menu-5773","data-js":"trigger-primary-dropdown","data-id":5773,"menu_id":5773,"has_children":true,"menu_items":[{"label":"Applied Research Liaison Office","classes":" menu-item menu-item--depth-1","url":"https:\/\/www.bcit.ca\/applied-research\/working-with-bcit\/applied-research-liaison-office\/","menu_id":6390,"has_children":false,"meta":[]},{"label":"Centre for Applied Research &#038; Innovation","classes":" menu-item menu-item--depth-1","url":"https:\/\/www.bcit.ca\/applied-research\/cari\/","menu_id":6396,"has_children":false,"meta":[]},{"label":"Research Centres","classes":" menu-item menu-item--depth-1","url":"https:\/\/www.bcit.ca\/applied-research\/research-centres\/","menu_id":6402,"has_children":false,"meta":[]},{"label":"People &amp; Committees","classes":" menu-item menu-item--depth-1","url":"https:\/\/www.bcit.ca\/applied-research\/people-committees\/","menu_id":406505,"has_children":false,"meta":[]},{"label":"Working with Us","classes":" menu-item menu-item-has-children menu-item--depth-1","url":"https:\/\/www.bcit.ca\/applied-research\/working-with-bcit\/","menu_id":6384,"has_children":true,"menu_items":[{"label":"Student Opportunities","classes":" menu-item menu-item--depth-2","url":"https:\/\/www.bcit.ca\/applied-research\/students\/","menu_id":6414,"has_children":false,"meta":[]},{"label":"Research Funding","classes":" menu-item menu-item--depth-2","url":"https:\/\/www.bcit.ca\/applied-research\/research-funding\/","menu_id":6408,"has_children":false,"meta":[]},{"label":"Contact Research","classes":" menu-item menu-item--depth-2","url":"https:\/\/www.bcit.ca\/applied-research\/contact-us\/","menu_id":6420,"has_children":false,"meta":[]}],"meta":[]}],"meta":[]},{"label":"About BCIT","id":"menu-item-5749","classes":" menu-item menu-item-has-children menu-item--depth-0","url":"https:\/\/www.bcit.ca\/about\/","class":"menu-item__anchor menu-item__anchor--child","data-target":"sub-menu-5749","data-js":"trigger-primary-dropdown","data-id":5749,"menu_id":5749,"has_children":true,"menu_items":[{"label":"Visit Us","classes":" menu-item menu-item-has-children menu-item--depth-1","url":"https:\/\/www.bcit.ca\/about\/visit\/","menu_id":69199,"has_children":true,"menu_items":[{"label":"Our Schools","classes":" menu-item menu-item--depth-2","url":"https:\/\/www.bcit.ca\/about\/schools\/","menu_id":69235,"has_children":false,"meta":[]},{"label":"Community","classes":" menu-item menu-item--depth-2","url":"https:\/\/www.bcit.ca\/about\/community\/","menu_id":69271,"has_children":false,"meta":[]}],"meta":[]},{"label":"Leadership &#038; Vision","classes":" menu-item menu-item-has-children menu-item--depth-1","url":"https:\/\/www.bcit.ca\/about\/leadership-vision\/","menu_id":69307,"has_children":true,"menu_items":[{"label":"News &#038; Events","classes":" menu-item menu-item--depth-2","url":"https:\/\/www.bcit.ca\/about\/news-events\/","menu_id":69343,"has_children":false,"meta":[]},{"label":"Careers at BCIT","classes":" menu-item menu-item--depth-2","url":"https:\/\/www.bcit.ca\/about\/careers\/","menu_id":69379,"has_children":false,"meta":[]}],"meta":[]}],"meta":[]}]},"primary_nav_secondary":{"menu_items":[{"label":"Attend an Info Session","classes":" menu-item menu-item--depth-0","url":"https:\/\/www.bcit.ca\/infosessions\/","menu_id":6282,"has_children":false,"meta":[]},{"label":"Apply to a Program","classes":" menu-item menu-item--depth-0","url":"https:\/\/www.bcit.ca\/admission\/how-to-apply\/application-steps\/","menu_id":6276,"has_children":false,"meta":[]},{"label":"Give to BCIT","classes":" menu-item menu-item--depth-0","url":"https:\/\/www.bcit.ca\/foundation\/giving-to-bcit\/","menu_id":6288,"has_children":false,"meta":[]}]},"template":"page-templates\/page-homepage.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.bcit.ca/wp-content/themes/core/js/dist/scripts.min.js?ver=4.21.10.07.2020' id='core-theme-scripts-js'></script>
+<script type='text/javascript' src='https://www.bcit.ca/wp-content/plugins/wp-smush-pro/app/assets/js/smush-lazy-load.min.js?ver=3.6.3' id='smush-lazy-load-js'></script>
+<script type='text/javascript' id='smush-lazy-load-js-after'>
+lazySizes.cfg.nativeLoading={setLoadingAttribute:false,disableListeners:{scroll:true}};lazySizes.init();
+</script>
+
+<!-- Hand crafted by Modern Tribe, Inc. (http://tri.be) -->
+
+
+
+		<style>
+
+.site-hero:before {
+  background-color:rgba(0,45,85,.6) !important;
+}
+
+.site-hero {
+  height: 90vh;
+  min-height: 500px;
+}
+
+.c-image__bg {
+	background-position-x: 75%;
+}
+
+.site-hero__title h1 {
+  color: white;
+  font-size: 48px;
+  line-height: 1;
+}
+
+.site-hero__title h1.learning {
+  font-size: 60px;
+}
+
+.site-hero__title h2 {
+  color: white;
+  font-size: 24px;
+  line-height: 0.95;
+}
+
+.site-hero__title h4 {
+  color: white;
+  line-height: 1.25;
+}
+
+.site-hero__title p {
+  color: white;
+  font-size: 20px;
+  line-height: 1.2;
+	font-family: avenir-regular, Arial, sans-serif;
+	letter-spacing: normal;
+}
+
+.site-panel--wysiwyg-row .site-panel--wysiwyg-col {
+	padding-left: 16px;
+	padding-right: 0;	
+}
+
+.s-header {
+  padding-bottom: 0 !important;
+}
+
+section#interstitial-5 {
+	display: none;
+}
+
+section#interstitial-3 h2 {
+	color: #003c71;
+}
+
+section#interstitial-3 .c-btn {
+	color: #003c71;
+	border-color: #003c71;
+}
+
+section#sliderrssloop-1 .c-slider__slide {
+	height: 525px;
+}
+
+section#sliderrssloop-1.s-wrapper {
+	padding-bottom: 0;
+	padding-top: 0;
+}
+
+@media (min-width: 960px) {
+  .site-hero {
+    height: 760px;
+  }
+
+	.c-image__bg {
+		background-position-x: 50%;
+	}
+
+  .site-hero__content-left {
+	  width: 60%;
+	}
+
+	.site-hero__title h1 {
+		font-size: 56px;
+	}
+
+	.site-hero__title h1.learning {
+		font-size: 84px;
+	}
+
+	.site-hero__title p {
+	  font-size: 22px;
+	  font-weight: 400;
+	}
+
+	.c-btn--large, a.c-btn--large {
+		padding: 22px 24px;
+	}
+	
+	.c-btn--large .c-btn--overline, a.c-btn--large .c-btn--overline {
+	  display: none;
+	}
+
+	.c-btn--large .c-btn__text::after, a.c-btn--large .c-btn__text::after {
+		padding-bottom: 5px;
+	}
+	
+  .site-panel--wysiwyg__container {
+	  padding: 64px 40px;
+	}
+
+	section#wysiwyg-0 .t-content a[class*="c-btn"], .t-content button[class*="c-btn"] {
+	  margin-top: 0;
+	}
+
+  section#wysiwyg-2 .u-border-btm {
+    border-bottom: 0;
+  }
+}
+
+</style>
+
+
+</body>
+</html>
+
+			<script>
+			const banners = [{"hero_title":"<h1 class=\"learning\">Learning beyond textbooks.</h1>\n<h4>Applications for full-time programs are now open.</h4>\n","hero_tagline":"","banner_image_id":160437,"hero_video_url":"","banner_weighting":"50","hero_bg_color":"","hero_cta_overline":"","hero_cta":{"title":"Learn more","url":"/study/","target":""},"hero_cta_secondary_overline":"","hero_cta_secondary":"","banner_image_url":"https://www.bcit.ca/wp-content/uploads/2020/02/homepage_nuytco3.jpg","banner_image_alt":"two technicians working on a yellow space suit in a garage setting.","banner_image_title":"homepage_nuytco3","featured_post_tagline":"","featured_post":[]},{"hero_title":"<h1>Attend an online info session.</h1>\n<h4>Wondering if a program is right for you?<br />\nGet your questions answered by faculty and staff.</h4>\n","hero_tagline":"","banner_image_id":500541,"hero_video_url":"","banner_weighting":"50","hero_bg_color":"","hero_cta_overline":"","hero_cta":{"title":"Learn more","url":"/infosessions/","target":""},"hero_cta_secondary_overline":"","hero_cta_secondary":"","banner_image_url":"https://www.bcit.ca/wp-content/uploads/2020/10/home_infosessions-scaled.jpg","banner_image_alt":"Homepage Infosessions","banner_image_title":"home_infosessions","featured_post_tagline":"","featured_post":[]}]
+		</script>
+	
